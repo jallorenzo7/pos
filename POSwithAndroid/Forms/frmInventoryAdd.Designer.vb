@@ -30,10 +30,10 @@ Partial Class frmInventoryAdd
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtBoxProduct = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtboxDateOfArrival = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtboxCost = New System.Windows.Forms.TextBox()
         Me.btnAdd = New System.Windows.Forms.Button()
+        Me.txtdateTime = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
         '
         'btnClose
@@ -41,7 +41,7 @@ Partial Class frmInventoryAdd
         Me.btnClose.Location = New System.Drawing.Point(322, 238)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(116, 32)
-        Me.btnClose.TabIndex = 0
+        Me.btnClose.TabIndex = 7
         Me.btnClose.Text = "&Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
@@ -91,7 +91,7 @@ Partial Class frmInventoryAdd
         Me.txtBoxProduct.Location = New System.Drawing.Point(147, 68)
         Me.txtBoxProduct.Name = "txtBoxProduct"
         Me.txtBoxProduct.Size = New System.Drawing.Size(271, 22)
-        Me.txtBoxProduct.TabIndex = 5
+        Me.txtBoxProduct.TabIndex = 2
         '
         'Label4
         '
@@ -101,13 +101,6 @@ Partial Class frmInventoryAdd
         Me.Label4.Size = New System.Drawing.Size(102, 17)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Date of Arrival:"
-        '
-        'txtboxDateOfArrival
-        '
-        Me.txtboxDateOfArrival.Location = New System.Drawing.Point(147, 149)
-        Me.txtboxDateOfArrival.Name = "txtboxDateOfArrival"
-        Me.txtboxDateOfArrival.Size = New System.Drawing.Size(271, 22)
-        Me.txtboxDateOfArrival.TabIndex = 7
         '
         'Label5
         '
@@ -123,27 +116,34 @@ Partial Class frmInventoryAdd
         Me.txtboxCost.Location = New System.Drawing.Point(147, 193)
         Me.txtboxCost.Name = "txtboxCost"
         Me.txtboxCost.Size = New System.Drawing.Size(271, 22)
-        Me.txtboxCost.TabIndex = 9
+        Me.txtboxCost.TabIndex = 5
         '
         'btnAdd
         '
         Me.btnAdd.Location = New System.Drawing.Point(30, 238)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(116, 32)
-        Me.btnAdd.TabIndex = 11
+        Me.btnAdd.TabIndex = 6
         Me.btnAdd.Text = "&Add Inventory"
         Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'txtdateTime
+        '
+        Me.txtdateTime.Location = New System.Drawing.Point(147, 147)
+        Me.txtdateTime.Name = "txtdateTime"
+        Me.txtdateTime.Size = New System.Drawing.Size(271, 22)
+        Me.txtdateTime.TabIndex = 4
         '
         'frmInventoryAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(483, 302)
+        Me.Controls.Add(Me.txtdateTime)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtboxCost)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtboxDateOfArrival)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtBoxProduct)
         Me.Controls.Add(Me.Label2)
@@ -167,8 +167,8 @@ Partial Class frmInventoryAdd
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtBoxProduct As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents txtboxDateOfArrival As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtboxCost As System.Windows.Forms.TextBox
     Friend WithEvents btnAdd As System.Windows.Forms.Button
+    Friend WithEvents txtdateTime As System.Windows.Forms.DateTimePicker
 End Class

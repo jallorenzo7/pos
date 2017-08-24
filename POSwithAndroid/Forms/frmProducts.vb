@@ -3,11 +3,11 @@
 
     Private Sub CashRegisterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CashRegisterToolStripMenuItem.Click
         POS.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub frmProducts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dbconn()
+        'dbconn()
         ControlBox = False
         loadCategories()
         loadProducts("")
@@ -15,21 +15,21 @@
 
     Private Sub InventoryToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frmInventory.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub StocksToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StocksToolStripMenuItem.Click
         frmStocks.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub UserManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserManagementToolStripMenuItem.Click
         frmuserMange.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub ClosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClosToolStripMenuItem.Click
-        Me.Close()
+        Me.Hide()
         POS.Close()
     End Sub
 
@@ -71,9 +71,9 @@
     End Function
     Function loadProducts(ByVal prodSearch As String)
         If prodSearch = "" Then
-            prodSearch = "SELECT * FROM products"
+            prodSearch = "SELECT id, product_name, category_id, product_description, barcode, price FROM products"
         Else
-            prodSearch = "SELECT * FROM products where product_name like '%" + prodSearch + "%'"
+            prodSearch = "SELECT id, product_name, category_id, product_description, barcode, price FROM products where product_name like '%" + prodSearch + "%'"
         End If
         With listProducts
             .Clear()
@@ -136,10 +136,11 @@
     End Sub
 
     Private Sub btnProduct_Click(sender As Object, e As EventArgs) Handles btnProduct.Click
-            categoryPopulate()
-            frmAddProduct.cboxCategory.DataSource = categs.Tables(0)
-            frmAddProduct.cboxCategory.ValueMember = "id"
-            frmAddProduct.cboxCategory.DisplayMember = "category_name"
+        frmAddProduct.txtboxBarCode.Text = ""
+        frmAddProduct.txtboxDesc.Text = ""
+        frmAddProduct.txtboxPrice.Text = ""
+        frmAddProduct.txtbxProdName.Text = ""
+        frmAddProduct.btnAdd.Text = "&Add Product"
         frmAddProduct.Show()
         Me.Enabled = False
     End Sub
@@ -150,10 +151,6 @@
             sql = "select * from products where id = " + id + ""
             exist = getProduct(sql)
             If exist Then
-                categoryPopulate()
-                frmAddProduct.cboxCategory.DataSource = categs.Tables(0)
-                frmAddProduct.cboxCategory.ValueMember = "id"
-                frmAddProduct.cboxCategory.DisplayMember = "category_name"
                 frmAddProduct.btnAdd.Text = "Upda&te"
                 frmAddProduct.Text = "Update a product"
                 frmAddProduct.cboxCategory.SelectedValue = product_category
@@ -173,7 +170,4 @@
         loadProducts(Me.TextBox1.Text)
     End Sub
 
-    Private Sub listProducts_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listProducts.SelectedIndexChanged
-
-    End Sub
 End Class

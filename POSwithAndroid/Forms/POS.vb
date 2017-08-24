@@ -26,5 +26,6 @@
     Private Sub POS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ControlBox = False
         dbconn()
+        categoryPopulate()
     End Sub
 End Class

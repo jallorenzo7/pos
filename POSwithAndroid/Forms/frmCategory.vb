@@ -7,7 +7,7 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         frmProducts.Enabled = True
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -18,13 +18,13 @@
                 sql = "select * from categories where category_name = '" + Me.txtbxName.Text + "'"
                 exist = checkCategory(sql)
                 If exist = False Then
-                    sql = "insert into categories (category_name,description) values ('" + Me.txtbxName.Text + "','" + Me.txtboxDescription.Text + "')"
+                    sql = "insert into categories (category_name,category_description) values ('" + Me.txtbxName.Text + "','" + Me.txtboxDescription.Text + "')"
                     query(sql)
                     Me.txtbxName.Text = ""
                     Me.txtboxDescription.Text = ""
                     frmProducts.Enabled = True
                     frmProducts.loadCategories()
-                    Me.Close()
+                    Me.Hide()
                 Else
                     MsgBox("Category already exists")
                 End If
@@ -33,7 +33,7 @@
                 query(sql)
                 frmProducts.loadCategories()
                 frmProducts.Enabled = True
-                Me.Close()
+                Me.Hide()
             End If
             
         End If

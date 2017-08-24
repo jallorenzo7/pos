@@ -6,7 +6,7 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         frmStocks.Enabled = True
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -14,7 +14,7 @@
             If Me.txtbxTransactionId.Text = "" Then
                 MsgBox("Transaction Id must not be empty")
             Else
-                sql = "transaction_id = " + Me.txtbxTransactionId.Text + " quantity = " + Me.txtBoxQuantity.Text + " product = " + Me.txtBoxProduct.Text + " data_of_arrival = " + Me.txtboxDateOfArrival.Text + " cost = " + Me.txtboxCost.Text
+                sql = "insert into stocks (transaction_id, quantity_onhand, quantity_initial, cost, arrival_date,) values ('" + Me.txtbxTransactionId.Text + "','" + Me.txtBoxQuantity.Text + "','" + Me.txtBoxQuantity.Text + "','" + Me.txtboxCost.Text + "','" + Me.txtdateTime.Value + "') product = " + Me.txtBoxProduct.Text + ""
 
                 MsgBox(sql)
             End If
