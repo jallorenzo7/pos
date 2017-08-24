@@ -19,8 +19,10 @@ Module mainModule
     Public product_category_int As Integer
     Public productAdapter As New Odbc.OdbcDataAdapter
     Public categAdapter As New Odbc.OdbcDataAdapter
+    Public typeAdapter As New Odbc.OdbcDataAdapter
     Public categs As New DataSet
     Public productsData As New DataSet
+    Public typeData As New DataSet
     Function dbconn()
         strcon = "Dsn=PostgreSQL30;database=dbij3u4aipolgu;server=ec2-23-23-228-115.compute-1.amazonaws.com;port=5432;uid=vyiwdhkruxsdeu;sslmode=allow;readonly=0;protocol=7.4;fakeoidindex=0;showoidcolumn=0;rowversioning=0;showsystemtables=0;fetch=100;unknownsizes=0;maxvarcharsize=255;maxlongvarcharsize=8190;debug=0;commlog=0;usedeclarefetch=0;textaslongvarchar=1;unknownsaslongvarchar=0;boolsaschar=1;parse=0;lfconversion=1;updatablecursors=1;trueisminus1=0;bi=0;byteaaslongvarbinary=1;useserversideprepare=1;lowercaseidentifier=0;gssauthusegss=0;xaopt=1"
         con.ConnectionString = strcon
@@ -135,6 +137,20 @@ Module mainModule
         frmInventoryAdd.cboxProduct.DataSource = productsData.Tables(0)
         frmInventoryAdd.cboxProduct.ValueMember = "id"
         frmInventoryAdd.cboxProduct.DisplayMember = "product_name"
+        Return (0)
+    End Function
+    Function typePopulate()
+        POS.cboxType.DataSource = Nothing
+        POS.cboxType.DataBindings.Clear()
+        strcommand = Nothing
+        PassSql = "select * from buyer_type"
+        strcommand = New Odbc.OdbcCommand(PassSql, con)
+        productAdapter = New OdbcDataAdapter(PassSql, con)
+        typeAdapter.SelectCommand = strcommand
+        typeAdapter.Fill(typeData)
+        POS.cboxType.DataSource = typeData.Tables(0)
+        POS.cboxType.ValueMember = "id"
+        POS.cboxType.DisplayMember = "type_name"
         Return (0)
     End Function
     Function getStock(ByVal procsql As String)

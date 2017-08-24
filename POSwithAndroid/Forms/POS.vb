@@ -26,7 +26,20 @@
     Private Sub POS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ControlBox = False
         dbconn()
+        typePopulate()
         categoryPopulate()
         productPopulate()
     End Sub
+
+    Private Sub txtBxProductSearch_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBxProductSearch.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            getProd(Me.txtBxProductSearch.Text)
+        End If
+    End Sub
+
+    Function getProd(ByVal takeId As String)
+        MsgBox(takeId)
+        Return True
+    End Function
+
 End Class

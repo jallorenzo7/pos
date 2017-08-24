@@ -40,6 +40,10 @@ Partial Class POS
         Me.lblChange = New System.Windows.Forms.Label()
         Me.lblAReceived = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblOr = New System.Windows.Forms.Label()
+        Me.cboxType = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -141,11 +145,12 @@ Partial Class POS
         Me.txtboxQuantity.Name = "txtboxQuantity"
         Me.txtboxQuantity.Size = New System.Drawing.Size(100, 22)
         Me.txtboxQuantity.TabIndex = 10
+        Me.txtboxQuantity.Text = "1"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(890, 255)
+        Me.Label3.Location = New System.Drawing.Point(881, 255)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(65, 17)
         Me.Label3.TabIndex = 11
@@ -187,11 +192,50 @@ Partial Class POS
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Amount Received: ₱"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(13, 56)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(107, 17)
+        Me.Label5.TabIndex = 16
+        Me.Label5.Text = "Official Receipt:"
+        '
+        'lblOr
+        '
+        Me.lblOr.AutoSize = True
+        Me.lblOr.Location = New System.Drawing.Point(126, 56)
+        Me.lblOr.Name = "lblOr"
+        Me.lblOr.Size = New System.Drawing.Size(0, 17)
+        Me.lblOr.TabIndex = 17
+        '
+        'cboxType
+        '
+        Me.cboxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboxType.FormattingEnabled = True
+        Me.cboxType.Location = New System.Drawing.Point(961, 296)
+        Me.cboxType.Name = "cboxType"
+        Me.cboxType.Size = New System.Drawing.Size(100, 24)
+        Me.cboxType.TabIndex = 18
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(861, 299)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(85, 17)
+        Me.Label7.TabIndex = 19
+        Me.Label7.Text = "Buyer Type:"
+        '
         'POS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1120, 595)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.cboxType)
+        Me.Controls.Add(Me.lblOr)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.lblAReceived)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblChange)
@@ -234,5 +278,9 @@ Partial Class POS
     Friend WithEvents lblChange As System.Windows.Forms.Label
     Friend WithEvents lblAReceived As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents lblOr As System.Windows.Forms.Label
+    Friend WithEvents cboxType As System.Windows.Forms.ComboBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 
 End Class
