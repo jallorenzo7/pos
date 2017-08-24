@@ -28,3 +28,16 @@ C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\bin\Debug\POSwithAndroid.exe.conf
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.exe
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.xml
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.pdb
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\bin\Debug\POSwithAndroid.exe
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\bin\Debug\POSwithAndroid.pdb
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\bin\Debug\POSwithAndroid.xml
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmAddProduct.resources
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmCategory.resources
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmInventory.resources
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmInventoryAdd.resources
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmProducts.resources
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmStocks.resources
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmuserMange.resources
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.POS.resources
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.Resources.resources
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.vbproj.GenerateResource.Cache

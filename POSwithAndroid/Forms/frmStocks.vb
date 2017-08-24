@@ -29,4 +29,9 @@
         Me.Close()
         POS.Close()
     End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        frmInventoryAdd.Show()
+        Me.Enabled = False
+    End Sub
 End Class

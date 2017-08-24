@@ -33,15 +33,9 @@ Module mainModule
     Public counter As Integer = 1
     Public adapter As OdbcDataAdapter
     Function dbconn()
-        strcon = "DRIVER={MySQL ODBC 3.51 Driver};" & _
-        "SERVER=ec2-23-23-228-115.compute-1.amazonaws.com;" & _
-        "DATABASE=dbij3u4aipolgu;" & _
-        "USER=vyiwdhkruxsdeu;" & _
-        "PASSWORD=d1aea6819b20f5479d9bb0af8feff8cb5d6c9b48643792ce088cb90c7daf54bc;" & _
-        "port=5432;"
-
-        'adapter = New OdbcDataAdapter("select * from products", strcon)
-        adapter = New OdbcDataAdapter("insert into products (product_name) values ('test')", strcon)
+        strcon = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + appPath + "posandroid.mdb"
+        con = New OleDb.OleDbConnection(strcon)
+        con.Open()
 
         Return (0)
     End Function

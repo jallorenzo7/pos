@@ -38,7 +38,7 @@ Partial Class frmInventoryAdd
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(424, 238)
+        Me.btnClose.Location = New System.Drawing.Point(322, 238)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(116, 32)
         Me.btnClose.TabIndex = 0
@@ -138,7 +138,7 @@ Partial Class frmInventoryAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(566, 302)
+        Me.ClientSize = New System.Drawing.Size(483, 302)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtboxCost)

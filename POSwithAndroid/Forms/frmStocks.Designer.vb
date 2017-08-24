@@ -28,6 +28,9 @@ Partial Class frmStocks
         Me.ProductsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnReports = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.listStocks = New System.Windows.Forms.ListView()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -71,11 +74,40 @@ Partial Class frmStocks
         Me.ClosToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
         Me.ClosToolStripMenuItem.Text = "Clos&e"
         '
+        'btnReports
+        '
+        Me.btnReports.Location = New System.Drawing.Point(915, 530)
+        Me.btnReports.Name = "btnReports"
+        Me.btnReports.Size = New System.Drawing.Size(193, 47)
+        Me.btnReports.TabIndex = 12
+        Me.btnReports.Text = "&Reports"
+        Me.btnReports.UseVisualStyleBackColor = True
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Location = New System.Drawing.Point(915, 38)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(193, 47)
+        Me.btnAdd.TabIndex = 11
+        Me.btnAdd.Text = "&Add Inventory"
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'listStocks
+        '
+        Me.listStocks.Location = New System.Drawing.Point(12, 38)
+        Me.listStocks.Name = "listStocks"
+        Me.listStocks.Size = New System.Drawing.Size(897, 539)
+        Me.listStocks.TabIndex = 10
+        Me.listStocks.UseCompatibleStateImageBehavior = False
+        '
         'frmStocks
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1120, 595)
+        Me.Controls.Add(Me.btnReports)
+        Me.Controls.Add(Me.btnAdd)
+        Me.Controls.Add(Me.listStocks)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmStocks"
@@ -93,4 +125,7 @@ Partial Class frmStocks
     Friend WithEvents ProductsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UserManagementToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents btnReports As System.Windows.Forms.Button
+    Friend WithEvents btnAdd As System.Windows.Forms.Button
+    Friend WithEvents listStocks As System.Windows.Forms.ListView
 End Class

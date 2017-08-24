@@ -28,6 +28,8 @@ Partial Class frmuserMange
         Me.ProductsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -71,11 +73,30 @@ Partial Class frmuserMange
         Me.ClosToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
         Me.ClosToolStripMenuItem.Text = "Clos&e"
         '
+        'ListView1
+        '
+        Me.ListView1.Location = New System.Drawing.Point(12, 52)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(789, 444)
+        Me.ListView1.TabIndex = 7
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(807, 52)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(236, 51)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "&Add User"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmuserMange
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1120, 595)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmuserMange"
@@ -93,4 +114,6 @@ Partial Class frmuserMange
     Friend WithEvents ProductsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UserManagementToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListView1 As System.Windows.Forms.ListView
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
