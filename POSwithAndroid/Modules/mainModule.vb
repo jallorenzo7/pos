@@ -14,23 +14,14 @@ Module mainModule
     Public buttonval, butval, butopt, category_exist, dbpass, loggedAdmin As String
     Public category_name, category_description, category_id As String
     Public product_barcode, product_category, product_description, product_id, product_name, product_price As String
-    Public conf As Integer
-    Public checknum, dbSTNO As Integer
-    Public dbStdNo, dbavatar As String
-    Public funcIden, dir2, dir3, dirfinal As String
-    Public dbsectadviser, dbsectyear, dbsectlist, searchSQL, searchSQL2 As String
-    Public FileToMove As String
-    Public MoveLocation As String
-    Public currentSY As String = Year(Now) & "-" & Year(Now) + 1
-    Public dir As String = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-    Public dbFN, dbMN, dbLN, dbGEN, dbADD, dbAGE, dbYEAR, dbSECT, dbADV, dbDATE, dbSY, dbAVA, dbGRAD, dbTYPE As String
-    Public sqlsec, sqlyear As String
-    Public appPath As String = AppDomain.CurrentDomain.BaseDirectory
+    Public stock_id, stock_tId, stock_product_id, stock_quantity_onhand, stock_quantity_initial, stock_cost As String
+    Public stock_arrival_date As Date
+    Public product_category_int As Integer
+    Public productAdapter As New Odbc.OdbcDataAdapter
     Public categAdapter As New Odbc.OdbcDataAdapter
     Public categs As New DataSet
-    Public counter As Integer = 1
+    Public productsData As New DataSet
     Function dbconn()
-        '   strcon = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + appPath + "posandroid.mdb"
         strcon = "Dsn=PostgreSQL30;database=dbij3u4aipolgu;server=ec2-23-23-228-115.compute-1.amazonaws.com;port=5432;uid=vyiwdhkruxsdeu;sslmode=allow;readonly=0;protocol=7.4;fakeoidindex=0;showoidcolumn=0;rowversioning=0;showsystemtables=0;fetch=100;unknownsizes=0;maxvarcharsize=255;maxlongvarcharsize=8190;debug=0;commlog=0;usedeclarefetch=0;textaslongvarchar=1;unknownsaslongvarchar=0;boolsaschar=1;parse=0;lfconversion=1;updatablecursors=1;trueisminus1=0;bi=0;byteaaslongvarbinary=1;useserversideprepare=1;lowercaseidentifier=0;gssauthusegss=0;xaopt=1"
         con.ConnectionString = strcon
         con.Open()
@@ -132,4 +123,39 @@ Module mainModule
         Return (0)
     End Function
 
+    Function productPopulate()
+        frmInventoryAdd.cboxProduct.DataSource = Nothing
+        frmInventoryAdd.cboxProduct.DataBindings.Clear()
+        strcommand = Nothing
+        PassSql = "select * from products"
+        strcommand = New Odbc.OdbcCommand(PassSql, con)
+        productAdapter = New OdbcDataAdapter(PassSql, con)
+        productAdapter.SelectCommand = strcommand
+        productAdapter.Fill(productsData)
+        frmInventoryAdd.cboxProduct.DataSource = productsData.Tables(0)
+        frmInventoryAdd.cboxProduct.ValueMember = "id"
+        frmInventoryAdd.cboxProduct.DisplayMember = "product_name"
+        Return (0)
+    End Function
+    Function getStock(ByVal procsql As String)
+        strreader = Nothing
+        strcommand = Nothing
+        PassSql = procsql
+        strcommand = New Odbc.OdbcCommand(PassSql, con)
+        strreader = strcommand.ExecuteReader
+        While (strreader.Read)
+            stock_id = strreader("id").ToString
+            stock_tId = strreader("transaction_id").ToString
+            stock_product_id = strreader("product_id").ToString
+            stock_quantity_onhand = strreader("quantity_onhand").ToString
+            stock_quantity_initial = strreader("quantity_initial").ToString
+            stock_cost = strreader("cost").ToString
+            stock_arrival_date = strreader("arrival_date").ToString
+        End While
+        If stock_id = "" Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
 End Module

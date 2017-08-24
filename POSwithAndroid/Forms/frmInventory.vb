@@ -16,7 +16,7 @@
         Me.Close()
     End Sub
 
-    Private Sub UserManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserManagementToolStripMenuItem.Click
+    Private Sub UserManagementToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frmuserMange.Show()
         Me.Close()
     End Sub

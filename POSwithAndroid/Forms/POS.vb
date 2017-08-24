@@ -14,7 +14,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub UserManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserManagementToolStripMenuItem.Click
+    Private Sub UserManagementToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frmuserMange.Show()
         Me.Hide()
     End Sub
@@ -27,5 +27,6 @@
         ControlBox = False
         dbconn()
         categoryPopulate()
+        productPopulate()
     End Sub
 End Class

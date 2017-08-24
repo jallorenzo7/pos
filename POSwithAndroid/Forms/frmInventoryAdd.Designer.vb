@@ -28,12 +28,13 @@ Partial Class frmInventoryAdd
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtBoxQuantity = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtBoxProduct = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtboxCost = New System.Windows.Forms.TextBox()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.txtdateTime = New System.Windows.Forms.DateTimePicker()
+        Me.cboxProduct = New System.Windows.Forms.ComboBox()
+        Me.lblStockId = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnClose
@@ -86,13 +87,6 @@ Partial Class frmInventoryAdd
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Product:"
         '
-        'txtBoxProduct
-        '
-        Me.txtBoxProduct.Location = New System.Drawing.Point(147, 68)
-        Me.txtBoxProduct.Name = "txtBoxProduct"
-        Me.txtBoxProduct.Size = New System.Drawing.Size(271, 22)
-        Me.txtBoxProduct.TabIndex = 2
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -134,18 +128,36 @@ Partial Class frmInventoryAdd
         Me.txtdateTime.Size = New System.Drawing.Size(271, 22)
         Me.txtdateTime.TabIndex = 4
         '
+        'cboxProduct
+        '
+        Me.cboxProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboxProduct.FormattingEnabled = True
+        Me.cboxProduct.Location = New System.Drawing.Point(147, 68)
+        Me.cboxProduct.Name = "cboxProduct"
+        Me.cboxProduct.Size = New System.Drawing.Size(271, 24)
+        Me.cboxProduct.TabIndex = 12
+        '
+        'lblStockId
+        '
+        Me.lblStockId.AutoSize = True
+        Me.lblStockId.Location = New System.Drawing.Point(225, 252)
+        Me.lblStockId.Name = "lblStockId"
+        Me.lblStockId.Size = New System.Drawing.Size(0, 17)
+        Me.lblStockId.TabIndex = 13
+        '
         'frmInventoryAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(483, 302)
+        Me.Controls.Add(Me.lblStockId)
+        Me.Controls.Add(Me.cboxProduct)
         Me.Controls.Add(Me.txtdateTime)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtboxCost)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtBoxProduct)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtBoxQuantity)
         Me.Controls.Add(Me.Label1)
@@ -165,10 +177,11 @@ Partial Class frmInventoryAdd
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtBoxQuantity As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents txtBoxProduct As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtboxCost As System.Windows.Forms.TextBox
     Friend WithEvents btnAdd As System.Windows.Forms.Button
     Friend WithEvents txtdateTime As System.Windows.Forms.DateTimePicker
+    Friend WithEvents cboxProduct As System.Windows.Forms.ComboBox
+    Friend WithEvents lblStockId As System.Windows.Forms.Label
 End Class

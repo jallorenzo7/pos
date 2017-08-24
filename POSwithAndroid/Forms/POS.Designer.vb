@@ -29,7 +29,6 @@ Partial Class POS
         Me.lblTotalAmount = New System.Windows.Forms.Label()
         Me.CashRegisterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.StocksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -91,12 +90,6 @@ Partial Class POS
         Me.ProductsToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
         Me.ProductsToolStripMenuItem.Text = "P&roducts"
         '
-        'UserManagementToolStripMenuItem
-        '
-        Me.UserManagementToolStripMenuItem.Name = "UserManagementToolStripMenuItem"
-        Me.UserManagementToolStripMenuItem.Size = New System.Drawing.Size(142, 24)
-        Me.UserManagementToolStripMenuItem.Text = "U&ser Management"
-        '
         'ClosToolStripMenuItem
         '
         Me.ClosToolStripMenuItem.Name = "ClosToolStripMenuItem"
@@ -105,7 +98,7 @@ Partial Class POS
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.UserManagementToolStripMenuItem, Me.ClosToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.ClosToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1120, 28)
@@ -146,7 +139,6 @@ Partial Class POS
     Friend WithEvents lblTotalAmount As System.Windows.Forms.Label
     Friend WithEvents CashRegisterToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProductsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UserManagementToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents StocksToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

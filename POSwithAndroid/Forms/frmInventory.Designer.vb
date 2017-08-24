@@ -27,7 +27,6 @@ Partial Class frmInventory
         Me.InventoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StocksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -37,7 +36,7 @@ Partial Class frmInventory
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.InventoryToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.UserManagementToolStripMenuItem, Me.ClosToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.InventoryToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.ClosToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1120, 28)
@@ -68,12 +67,6 @@ Partial Class frmInventory
         Me.ProductsToolStripMenuItem.Name = "ProductsToolStripMenuItem"
         Me.ProductsToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
         Me.ProductsToolStripMenuItem.Text = "P&roducts"
-        '
-        'UserManagementToolStripMenuItem
-        '
-        Me.UserManagementToolStripMenuItem.Name = "UserManagementToolStripMenuItem"
-        Me.UserManagementToolStripMenuItem.Size = New System.Drawing.Size(142, 24)
-        Me.UserManagementToolStripMenuItem.Text = "U&ser Management"
         '
         'ClosToolStripMenuItem
         '
@@ -131,7 +124,6 @@ Partial Class frmInventory
     Friend WithEvents InventoryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StocksToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProductsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UserManagementToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ClosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListView1 As System.Windows.Forms.ListView
     Friend WithEvents btnAdd As System.Windows.Forms.Button

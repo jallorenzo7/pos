@@ -23,7 +23,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub UserManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserManagementToolStripMenuItem.Click
+    Private Sub UserManagementToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frmuserMange.Show()
         Me.Hide()
     End Sub
@@ -153,7 +153,7 @@
             If exist Then
                 frmAddProduct.btnAdd.Text = "Upda&te"
                 frmAddProduct.Text = "Update a product"
-                frmAddProduct.cboxCategory.SelectedValue = product_category
+                frmAddProduct.cboxCategory.SelectedValue = Val(product_category)
                 frmAddProduct.txtbxProdName.Text = product_name
                 frmAddProduct.txtboxPrice.Text = product_price
                 frmAddProduct.txtboxDesc.Text = product_description

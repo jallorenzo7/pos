@@ -18,18 +18,20 @@
                 sql = "select * from categories where category_name = '" + Me.txtbxName.Text + "'"
                 exist = checkCategory(sql)
                 If exist = False Then
-                    sql = "insert into categories (category_name,category_description) values ('" + Me.txtbxName.Text + "','" + Me.txtboxDescription.Text + "')"
+                    sql = "insert into categories (category_name,category_description) values ('" + Me.txtbxName.Text + "', '" + Me.txtboxDescription.Text + "')"
                     query(sql)
                     Me.txtbxName.Text = ""
                     Me.txtboxDescription.Text = ""
                     frmProducts.Enabled = True
                     frmProducts.loadCategories()
+                    categs.Tables(0).Rows.Clear()
+                    categoryPopulate()
                     Me.Hide()
                 Else
                     MsgBox("Category already exists")
                 End If
             ElseIf Me.btnAdd.Text = "Upda&te" Then
-                sql = "update categories set category_name = '" + Me.txtbxName.Text + "', description = '" + Me.txtboxDescription.Text + "' where id = " + Me.lblCategId.Text
+                sql = "update categories set category_name = '" + Me.txtbxName.Text + "', category_description = '" + Me.txtboxDescription.Text + "' where id = " + Me.lblCategId.Text
                 query(sql)
                 frmProducts.loadCategories()
                 frmProducts.Enabled = True
