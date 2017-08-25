@@ -185,7 +185,7 @@ Module mainModule
             POS.lblOr.Text = receipt_id
         Else
             POS.lblOr.Text = receipt_id
-            POS.lblTotalAmount.Text = receipt_total_amount + ".00"
+            POS.lblTotalAmount.Text = receipt_total_amount
         End If
         Return 0
     End Function
@@ -209,11 +209,13 @@ Module mainModule
     End Function
     Function getProd(ByVal takeId As String)
         clearVariables()
-        If product_id = "" Then
+        If takeId.Trim = "" Then
             MsgBox("Product does not exist!")
             Return False
         End If
-        If takeId.Trim = "" Then
+        sql = "SELECT * FROM products WHERE barcode = '" + takeId + "' OR product_name LIKE '%" + takeId + "%'"
+        getProduct(sql)
+        If product_id = "" Then
             MsgBox("Product does not exist!")
             Return False
         End If
@@ -238,7 +240,7 @@ Module mainModule
         POS.lblOr.Text = receipt_id
         POS.txtBxProductSearch.Text = ""
         POS.txtboxQuantity.Text = "1"
-        POS.lblTotalAmount.Text = receipt_total_amount + ".00"
+        POS.lblTotalAmount.Text = receipt_total_amount
         POS.loadReceipts()
         Return 0
     End Function
@@ -285,7 +287,7 @@ Module mainModule
             query(sql)
             POS.loadReceipts()
             checkExistingReceipt()
-            POS.lblTotalAmount.Text = receipt_total_amount + ".00"
+            POS.lblTotalAmount.Text = receipt_total_amount
             clearVariables()
         Else
             MsgBox("Entry does not exist")
