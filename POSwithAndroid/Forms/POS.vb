@@ -101,10 +101,11 @@
     Private Sub listViewInvoicce_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles listViewInvoicce.MouseDoubleClick
         If Me.listViewInvoicce.SelectedItems.Item(0).Text.ToString Then
             Dim id As String = Me.listViewInvoicce.SelectedItems.Item(0).Text.ToString
-            sql = "select * from product_receipt where id = " + id + ""
-            MsgBox(sql)
+            Dim result As Integer = MessageBox.Show("Do you want to remove this item?", "POS", MessageBoxButtons.YesNo)
+            If result = DialogResult.Yes Then
+                itemVoid(id)
+            End If
         End If
     End Sub
-
 
 End Class

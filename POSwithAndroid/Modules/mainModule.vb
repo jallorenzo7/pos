@@ -24,6 +24,7 @@ Module mainModule
     Public typeData As New DataSet
     Public receipt_id, receipt_buyerType, receipt_quantity, receipt_total_amount As String
     Public receipt_transaction_date As Date
+    Public rd_quantity, rd_amount, rd_id As String
     Function dbconn()
         strcon = "Dsn=PostgreSQL30;database=dbij3u4aipolgu;server=ec2-23-23-228-115.compute-1.amazonaws.com;port=5432;uid=vyiwdhkruxsdeu;sslmode=allow;readonly=0;protocol=7.4;fakeoidindex=0;showoidcolumn=0;rowversioning=0;showsystemtables=0;fetch=100;unknownsizes=0;maxvarcharsize=255;maxlongvarcharsize=8190;debug=0;commlog=0;usedeclarefetch=0;textaslongvarchar=1;unknownsaslongvarchar=0;boolsaschar=1;parse=0;lfconversion=1;updatablecursors=1;trueisminus1=0;bi=0;byteaaslongvarbinary=1;useserversideprepare=1;lowercaseidentifier=0;gssauthusegss=0;xaopt=1"
         con.ConnectionString = strcon
@@ -184,7 +185,7 @@ Module mainModule
             POS.lblOr.Text = receipt_id
         Else
             POS.lblOr.Text = receipt_id
-            POS.lblTotalAmount.Text = receipt_total_amount
+            POS.lblTotalAmount.Text = receipt_total_amount + ".00"
         End If
         Return 0
     End Function
@@ -236,7 +237,8 @@ Module mainModule
         checkExistingReceipt()
         POS.lblOr.Text = receipt_id
         POS.txtBxProductSearch.Text = ""
-        POS.lblTotalAmount.Text = receipt_total_amount
+        POS.txtboxQuantity.Text = "1"
+        POS.lblTotalAmount.Text = receipt_total_amount + ".00"
         POS.loadReceipts()
         Return 0
     End Function
@@ -264,9 +266,48 @@ Module mainModule
         category_name = ""
         category_description = ""
 
+        rd_id = ""
+        rd_quantity = ""
+        rd_amount = ""
+
         Return 0
     End Function
     Function itemVoid(ByVal id As String)
+        Dim exist As Boolean = getReceiptDetails(id)
+        If exist Then
+            Dim orId As String = POS.lblOr.Text
+            checkExistingReceipt()
+            Dim dbQuan As String = Val(receipt_quantity) - Val(rd_quantity)
+            Dim dbTm As String = Val(receipt_total_amount) - Val(rd_amount)
+            sql = "update receipts set quantity ='" + dbQuan + "',total_amount = '" + dbTm + "' where id = " + orId
+            query(sql)
+            sql = "delete from product_receipt where id =" + id
+            query(sql)
+            POS.loadReceipts()
+            checkExistingReceipt()
+            POS.lblTotalAmount.Text = receipt_total_amount + ".00"
+            clearVariables()
+        Else
+            MsgBox("Entry does not exist")
+            Return 0
+        End If
+
+        Return 0
+    End Function
+    Function getReceiptDetails(ByVal id As String)
+        sql = "SELECT * FROM product_receipt WHERE id = " + id
+        strcommand = New Odbc.OdbcCommand(sql, con)
+        strreader = strcommand.ExecuteReader
+        While (strreader.Read)
+            rd_id = strreader("id").ToString
+            rd_quantity = strreader("quantity").ToString
+            rd_amount = strreader("amount").ToString
+        End While
+        If rd_id = "" Then
+            Return False
+        Else
+            Return True
+        End If
         Return 0
     End Function
 End Module
