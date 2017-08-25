@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.POSwithAndroid.POS
+            Me.MainForm = Global.POSwithAndroid.pos
         End Sub
     End Class
 End Namespace

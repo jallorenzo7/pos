@@ -2,7 +2,7 @@
     Dim exist As Boolean
 
     Private Sub CashRegisterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CashRegisterToolStripMenuItem.Click
-        POS.Show()
+        pos.Show()
         Me.Hide()
     End Sub
 
@@ -29,7 +29,7 @@
 
     Private Sub ClosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClosToolStripMenuItem.Click
         Me.Hide()
-        POS.Close()
+        pos.Close()
     End Sub
 
     Private Sub btnCategory_Click(sender As Object, e As EventArgs) Handles btnCategory.Click

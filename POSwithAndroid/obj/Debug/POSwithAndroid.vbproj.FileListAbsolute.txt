@@ -38,7 +38,7 @@ C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmInven
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmProducts.resources
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmStocks.resources
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmuserMange.resources
-C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.POS.resources
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.Resources.resources
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.vbproj.GenerateResource.Cache
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.vbprojResolveAssemblyReference.cache
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.pos.resources

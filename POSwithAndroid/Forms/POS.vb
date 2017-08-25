@@ -1,4 +1,4 @@
-﻿Public Class POS
+﻿Public Class pos
     Private Sub InventoryToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
         frmInventory.Show()
         Me.Hide()
@@ -38,7 +38,7 @@
             getProd(Me.txtBxProductSearch.Text)
         End If
     End Sub
-    
+
     Private Sub txtboxQuantity_KeyDown(sender As Object, e As KeyEventArgs) Handles txtboxQuantity.KeyDown
         If e.KeyCode = Keys.Enter Then
             getProd(Me.txtBxProductSearch.Text)
@@ -108,4 +108,18 @@
         End If
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnNextCustomer.Click
+        sql = "update receipts set transaction_date ='" + dateNos + "' where id = " + Me.lblOr.Text
+        query(sql)
+        newReceipts()
+        loadReceipts()
+        Me.lblAReceived.Text = "00.00"
+        Me.lblChange.Text = "00.00"
+        Me.lblTotalAmount.Text = "00.00"
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim amount As String = InputBox("Input amount received")
+        cashOut(amount)
+    End Sub
 End Class

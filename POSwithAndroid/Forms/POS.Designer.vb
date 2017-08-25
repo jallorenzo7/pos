@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class POS
+Partial Class pos
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -42,6 +42,8 @@ Partial Class POS
         Me.lblOr = New System.Windows.Forms.Label()
         Me.cboxType = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.btnNextCustomer = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -209,11 +211,31 @@ Partial Class POS
         Me.Label7.TabIndex = 19
         Me.Label7.Text = "Buyer Type:"
         '
-        'POS
+        'btnNextCustomer
+        '
+        Me.btnNextCustomer.Location = New System.Drawing.Point(479, 524)
+        Me.btnNextCustomer.Name = "btnNextCustomer"
+        Me.btnNextCustomer.Size = New System.Drawing.Size(240, 59)
+        Me.btnNextCustomer.TabIndex = 20
+        Me.btnNextCustomer.Text = "&Next Customer"
+        Me.btnNextCustomer.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(216, 524)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(240, 59)
+        Me.Button1.TabIndex = 21
+        Me.Button1.Text = "&Cash Out"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'pos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1120, 595)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnNextCustomer)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.cboxType)
         Me.Controls.Add(Me.lblOr)
@@ -231,7 +253,7 @@ Partial Class POS
         Me.Controls.Add(Me.txtBxProductSearch)
         Me.Controls.Add(Me.listViewInvoicce)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "POS"
+        Me.Name = "pos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "POS"
         Me.MenuStrip1.ResumeLayout(False)
@@ -260,5 +282,7 @@ Partial Class POS
     Friend WithEvents lblOr As System.Windows.Forms.Label
     Friend WithEvents cboxType As System.Windows.Forms.ComboBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents btnNextCustomer As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class

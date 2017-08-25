@@ -1,7 +1,7 @@
 ﻿Public Class frmInventory
 
     Private Sub CashRegisterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CashRegisterToolStripMenuItem.Click
-        POS.Show()
+        pos.Show()
         Me.Close()
 
     End Sub
@@ -23,7 +23,7 @@
 
     Private Sub ClosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClosToolStripMenuItem.Click
         Me.Close()
-        POS.Close()
+        pos.Close()
     End Sub
 
     Private Sub frmInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load

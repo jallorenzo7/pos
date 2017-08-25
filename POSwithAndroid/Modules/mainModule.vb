@@ -22,9 +22,9 @@ Module mainModule
     Public categs As New DataSet
     Public productsData As New DataSet
     Public typeData As New DataSet
-    Public receipt_id, receipt_buyerType, receipt_quantity, receipt_total_amount As String
-    Public receipt_transaction_date As Date
+    Public receipt_id, receipt_buyerType, receipt_quantity, receipt_total_amount, receipt_transaction_date As String
     Public rd_quantity, rd_amount, rd_id As String
+    Public dateNos As Date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
     Function dbconn()
         strcon = "Dsn=PostgreSQL30;database=dbij3u4aipolgu;server=ec2-23-23-228-115.compute-1.amazonaws.com;port=5432;uid=vyiwdhkruxsdeu;sslmode=allow;readonly=0;protocol=7.4;fakeoidindex=0;showoidcolumn=0;rowversioning=0;showsystemtables=0;fetch=100;unknownsizes=0;maxvarcharsize=255;maxlongvarcharsize=8190;debug=0;commlog=0;usedeclarefetch=0;textaslongvarchar=1;unknownsaslongvarchar=0;boolsaschar=1;parse=0;lfconversion=1;updatablecursors=1;trueisminus1=0;bi=0;byteaaslongvarbinary=1;useserversideprepare=1;lowercaseidentifier=0;gssauthusegss=0;xaopt=1"
         con.ConnectionString = strcon
@@ -142,17 +142,17 @@ Module mainModule
         Return (0)
     End Function
     Function typePopulate()
-        POS.cboxType.DataSource = Nothing
-        POS.cboxType.DataBindings.Clear()
+        pos.cboxType.DataSource = Nothing
+        pos.cboxType.DataBindings.Clear()
         strcommand = Nothing
         PassSql = "select * from buyer_type"
         strcommand = New Odbc.OdbcCommand(PassSql, con)
         productAdapter = New OdbcDataAdapter(PassSql, con)
         typeAdapter.SelectCommand = strcommand
         typeAdapter.Fill(typeData)
-        POS.cboxType.DataSource = typeData.Tables(0)
-        POS.cboxType.ValueMember = "id"
-        POS.cboxType.DisplayMember = "type_name"
+        pos.cboxType.DataSource = typeData.Tables(0)
+        pos.cboxType.ValueMember = "id"
+        pos.cboxType.DisplayMember = "type_name"
         Return (0)
     End Function
     Function getStock(ByVal procsql As String)
@@ -179,18 +179,18 @@ Module mainModule
     Function newReceipts()
         Dim checking As Boolean = checkExistingReceipt()
         If checking = False Then
-            sql = "insert into receipts (transaction_date) values ('" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") + "')"
+            sql = "insert into receipts (amount_received) values ('0')"
             query(sql)
             checkExistingReceipt()
-            POS.lblOr.Text = receipt_id
+            pos.lblOr.Text = receipt_id
         Else
-            POS.lblOr.Text = receipt_id
-            POS.lblTotalAmount.Text = receipt_total_amount
+            pos.lblOr.Text = receipt_id
+            pos.lblTotalAmount.Text = receipt_total_amount
         End If
         Return 0
     End Function
     Function checkExistingReceipt()
-        sql = "SELECT * FROM receipts WHERE buyer_type_id IS NULL"
+        sql = "SELECT * FROM receipts WHERE transaction_date IS NULL"
         strcommand = New Odbc.OdbcCommand(sql, con)
         strreader = strcommand.ExecuteReader
         While (strreader.Read)
@@ -221,13 +221,13 @@ Module mainModule
         End If
         sql = "SELECT * FROM products WHERE barcode = '" + takeId + "' OR product_name LIKE '%" + takeId + "%'"
         getProduct(sql)
-        Dim quantity As String = POS.txtboxQuantity.Text
+        Dim quantity As String = pos.txtboxQuantity.Text
         Dim total As String = Val(quantity) * Val(product_price)
         addingInReceipt(quantity, total)
         Return True
     End Function
     Function addingInReceipt(ByVal quantity As String, ByVal price As String)
-        Dim id As String = POS.lblOr.Text
+        Dim id As String = pos.lblOr.Text
         sql = "insert into product_receipt (receipt_id,product_id,quantity,amount) values ('" + id + "','" + product_id + "','" + quantity + "','" + price + "')"
         query(sql)
         checkExistingReceipt()
@@ -237,11 +237,11 @@ Module mainModule
         query(sql)
         clearVariables()
         checkExistingReceipt()
-        POS.lblOr.Text = receipt_id
-        POS.txtBxProductSearch.Text = ""
-        POS.txtboxQuantity.Text = "1"
-        POS.lblTotalAmount.Text = receipt_total_amount
-        POS.loadReceipts()
+        pos.lblOr.Text = receipt_id
+        pos.txtBxProductSearch.Text = ""
+        pos.txtboxQuantity.Text = "1"
+        pos.lblTotalAmount.Text = receipt_total_amount
+        pos.loadReceipts()
         Return 0
     End Function
     Function clearVariables()
@@ -277,7 +277,7 @@ Module mainModule
     Function itemVoid(ByVal id As String)
         Dim exist As Boolean = getReceiptDetails(id)
         If exist Then
-            Dim orId As String = POS.lblOr.Text
+            Dim orId As String = pos.lblOr.Text
             checkExistingReceipt()
             Dim dbQuan As String = Val(receipt_quantity) - Val(rd_quantity)
             Dim dbTm As String = Val(receipt_total_amount) - Val(rd_amount)
@@ -285,9 +285,9 @@ Module mainModule
             query(sql)
             sql = "delete from product_receipt where id =" + id
             query(sql)
-            POS.loadReceipts()
+            pos.loadReceipts()
             checkExistingReceipt()
-            POS.lblTotalAmount.Text = receipt_total_amount
+            pos.lblTotalAmount.Text = receipt_total_amount
             clearVariables()
         Else
             MsgBox("Entry does not exist")
@@ -310,6 +310,16 @@ Module mainModule
         Else
             Return True
         End If
+        Return 0
+    End Function
+    Function cashOut(ByVal amount As String)
+        clearVariables()
+        Dim id As String = pos.lblOr.Text
+        checkExistingReceipt()
+        sql = "update receipts set amount_received = '" + amount + "' where id = " + id
+        query(sql)
+        pos.lblChange.Text = Val(amount) - Val(receipt_total_amount)
+        pos.lblAReceived.Text = amount
         Return 0
     End Function
 End Module
