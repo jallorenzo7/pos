@@ -32,8 +32,6 @@ Partial Class POS
         Me.ClosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.StocksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtboxProdName = New System.Windows.Forms.TextBox()
         Me.txtboxQuantity = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -67,9 +65,9 @@ Partial Class POS
         Me.lblProductId.AutoSize = True
         Me.lblProductId.Location = New System.Drawing.Point(736, 79)
         Me.lblProductId.Name = "lblProductId"
-        Me.lblProductId.Size = New System.Drawing.Size(65, 17)
+        Me.lblProductId.Size = New System.Drawing.Size(167, 17)
         Me.lblProductId.TabIndex = 4
-        Me.lblProductId.Text = "Barcode:"
+        Me.lblProductId.Text = "Barcode / Product Name:"
         '
         'Label1
         '
@@ -122,22 +120,6 @@ Partial Class POS
         Me.StocksToolStripMenuItem.Name = "StocksToolStripMenuItem"
         Me.StocksToolStripMenuItem.Size = New System.Drawing.Size(63, 24)
         Me.StocksToolStripMenuItem.Text = "&Stocks"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(736, 152)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(102, 17)
-        Me.Label2.TabIndex = 9
-        Me.Label2.Text = "Product Name:"
-        '
-        'txtboxProdName
-        '
-        Me.txtboxProdName.Location = New System.Drawing.Point(739, 172)
-        Me.txtboxProdName.Name = "txtboxProdName"
-        Me.txtboxProdName.Size = New System.Drawing.Size(322, 22)
-        Me.txtboxProdName.TabIndex = 8
         '
         'txtboxQuantity
         '
@@ -242,8 +224,6 @@ Partial Class POS
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtboxQuantity)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtboxProdName)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.lblTotalAmount)
         Me.Controls.Add(Me.Label1)
@@ -270,8 +250,6 @@ Partial Class POS
     Friend WithEvents ClosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents StocksToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents txtboxProdName As System.Windows.Forms.TextBox
     Friend WithEvents txtboxQuantity As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label

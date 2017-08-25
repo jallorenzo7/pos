@@ -7,7 +7,6 @@
     End Sub
 
     Private Sub frmProducts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'dbconn()
         ControlBox = False
         loadCategories()
         loadProducts("")
