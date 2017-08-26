@@ -108,10 +108,12 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnNextCustomer.Click
+        stockMinus(Me.lblOr.Text)
         sql = "update receipts set transaction_date ='" + dateNos + "' where id = " + Me.lblOr.Text
         query(sql)
         newReceipts()
         loadReceipts()
+
         Me.lblAReceived.Text = "00.00"
         Me.lblChange.Text = "00.00"
         Me.lblTotalAmount.Text = "00.00"
@@ -120,5 +122,16 @@
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Dim amount As String = InputBox("Input amount received")
         cashOut(amount)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim amount As String = InputBox("Percentage of discount.")
+        Dim type As String = Me.cboxType.Text
+        discountInput(amount, type)
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        frmInventory.Show()
+        Me.Enabled = False
     End Sub
 End Class

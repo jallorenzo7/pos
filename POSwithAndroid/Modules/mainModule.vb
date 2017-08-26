@@ -23,7 +23,7 @@ Module mainModule
     Public productsData As New DataSet
     Public typeData As New DataSet
     Public receipt_id, receipt_buyerType, receipt_quantity, receipt_total_amount, receipt_transaction_date As String
-    Public rd_quantity, rd_amount, rd_id As String
+    Public rd_quantity, rd_amount, rd_id, rd_product As String
     Public dateNos As Date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
     Function dbconn()
         strcon = "Dsn=PostgreSQL30;database=dbij3u4aipolgu;server=ec2-23-23-228-115.compute-1.amazonaws.com;port=5432;uid=vyiwdhkruxsdeu;sslmode=allow;readonly=0;protocol=7.4;fakeoidindex=0;showoidcolumn=0;rowversioning=0;showsystemtables=0;fetch=100;unknownsizes=0;maxvarcharsize=255;maxlongvarcharsize=8190;debug=0;commlog=0;usedeclarefetch=0;textaslongvarchar=1;unknownsaslongvarchar=0;boolsaschar=1;parse=0;lfconversion=1;updatablecursors=1;trueisminus1=0;bi=0;byteaaslongvarbinary=1;useserversideprepare=1;lowercaseidentifier=0;gssauthusegss=0;xaopt=1"
@@ -155,32 +155,12 @@ Module mainModule
         pos.cboxType.DisplayMember = "type_name"
         Return (0)
     End Function
-    Function getStock(ByVal procsql As String)
-        strreader = Nothing
-        strcommand = Nothing
-        PassSql = procsql
-        strcommand = New Odbc.OdbcCommand(PassSql, con)
-        strreader = strcommand.ExecuteReader
-        While (strreader.Read)
-            stock_id = strreader("id").ToString
-            stock_tId = strreader("transaction_id").ToString
-            stock_product_id = strreader("product_id").ToString
-            stock_quantity_onhand = strreader("quantity_onhand").ToString
-            stock_quantity_initial = strreader("quantity_initial").ToString
-            stock_cost = strreader("cost").ToString
-            stock_arrival_date = strreader("arrival_date").ToString
-        End While
-        If stock_id = "" Then
-            Return False
-        Else
-            Return True
-        End If
-    End Function
     Function newReceipts()
         Dim checking As Boolean = checkExistingReceipt()
         If checking = False Then
             sql = "insert into receipts (amount_received) values ('0')"
             query(sql)
+            clearVariables()
             checkExistingReceipt()
             pos.lblOr.Text = receipt_id
         Else
@@ -222,6 +202,7 @@ Module mainModule
         sql = "SELECT * FROM products WHERE barcode = '" + takeId + "' OR product_name LIKE '%" + takeId + "%'"
         getProduct(sql)
         Dim quantity As String = pos.txtboxQuantity.Text
+
         Dim total As String = Val(quantity) * Val(product_price)
         addingInReceipt(quantity, total)
         Return True
@@ -281,6 +262,9 @@ Module mainModule
             checkExistingReceipt()
             Dim dbQuan As String = Val(receipt_quantity) - Val(rd_quantity)
             Dim dbTm As String = Val(receipt_total_amount) - Val(rd_amount)
+            If Val(dbTm) < 0 Then
+                dbTm = 0
+            End If
             sql = "update receipts set quantity ='" + dbQuan + "',total_amount = '" + dbTm + "' where id = " + orId
             query(sql)
             sql = "delete from product_receipt where id =" + id
@@ -302,6 +286,7 @@ Module mainModule
         strreader = strcommand.ExecuteReader
         While (strreader.Read)
             rd_id = strreader("id").ToString
+            rd_product = strreader("product_id").ToString
             rd_quantity = strreader("quantity").ToString
             rd_amount = strreader("amount").ToString
         End While
@@ -321,5 +306,125 @@ Module mainModule
         pos.lblChange.Text = Val(amount) - Val(receipt_total_amount)
         pos.lblAReceived.Text = amount
         Return 0
+    End Function
+    Function discountInput(ByVal amount As String, ByVal type As string)
+        Dim id As String = pos.lblOr.Text
+        checkExistingReceipt()
+        Dim tm As String = receipt_total_amount * (Val(amount) / 100)
+        sql = "update receipts set buyer_type_id = '" + type + "', total_amount = '" + tm + "' where id =" + id
+        query(sql)
+        clearVariables()
+        checkExistingReceipt()
+        pos.lblOr.Text = receipt_id
+        pos.txtBxProductSearch.Text = ""
+        pos.txtboxQuantity.Text = "1"
+        pos.lblTotalAmount.Text = receipt_total_amount
+        pos.loadReceipts()
+        Return 0
+    End Function
+    Function stockMinus(ByVal id As String)
+        sql = "SELECT * FROM product_receipt WHERE receipt_id = '" + id + "'"
+        strcommand = New Odbc.OdbcCommand(sql, con)
+        strreader = strcommand.ExecuteReader
+        While (strreader.Read)
+            rd_id = strreader("id").ToString
+            rd_product = strreader("product_id").ToString
+            rd_quantity = strreader("quantity").ToString
+            rd_amount = strreader("amount").ToString
+            Dim com As String = "SELECT * FROM stocks WHERE product_id = '" + rd_product + "'"
+            minusStock(com)
+        End While
+        Return 0
+    End Function
+
+    Function minusStock(ByVal procsql As String)
+        strreader = Nothing
+        strcommand = Nothing
+        PassSql = procsql
+        strcommand = New Odbc.OdbcCommand(PassSql, con)
+        strreader = strcommand.ExecuteReader
+        Dim temp As String = rd_quantity
+        While (strreader.Read)
+            stock_id = strreader("id").ToString
+            stock_tId = strreader("transaction_id").ToString
+            stock_product_id = strreader("product_id").ToString
+            stock_quantity_onhand = strreader("quantity_onhand").ToString
+            stock_quantity_initial = strreader("quantity_initial").ToString
+            stock_cost = strreader("cost").ToString
+            stock_arrival_date = strreader("arrival_date").ToString
+            If Val(stock_quantity_onhand) <= Val(temp) Then
+                temp = "0"
+                temp = Val(temp) - Val(stock_quantity_onhand)
+            Else
+                temp = Val(stock_quantity_onhand) - Val(temp)
+            End If
+        End While
+        sql = "update stocks set quantity_onhand='" + temp + "' where id = " + stock_id
+        query(sql)
+        Return True
+    End Function
+    Function getStock(ByVal procsql As String)
+        strreader = Nothing
+        strcommand = Nothing
+        PassSql = procsql
+        strcommand = New Odbc.OdbcCommand(PassSql, con)
+        strreader = strcommand.ExecuteReader
+        While (strreader.Read)
+            stock_id = strreader("id").ToString
+            stock_tId = strreader("transaction_id").ToString
+            stock_product_id = strreader("product_id").ToString
+            stock_quantity_onhand = strreader("quantity_onhand").ToString
+            stock_quantity_initial = strreader("quantity_initial").ToString
+            stock_cost = strreader("cost").ToString
+            stock_arrival_date = strreader("arrival_date").ToString
+        End While
+        If stock_id = "" Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    Function stockAdd(ByVal id As String)
+        sql = "SELECT * FROM product_receipt WHERE receipt_id = '" + id + "'"
+        strcommand = New Odbc.OdbcCommand(sql, con)
+        strreader = strcommand.ExecuteReader
+        While (strreader.Read)
+            rd_id = strreader("id").ToString
+            rd_product = strreader("product_id").ToString
+            rd_quantity = strreader("quantity").ToString
+            rd_amount = strreader("amount").ToString
+            Dim com As String = "SELECT * FROM stocks WHERE product_id = '" + rd_product + "'"
+            addStock(com)
+        End While
+        Return 0
+    End Function
+
+    Function addStock(ByVal procsql As String)
+        strreader = Nothing
+        strcommand = Nothing
+        PassSql = procsql
+        strcommand = New Odbc.OdbcCommand(PassSql, con)
+        strreader = strcommand.ExecuteReader
+        Dim temp As String = rd_quantity
+        While (strreader.Read)
+            stock_id = strreader("id").ToString
+            stock_tId = strreader("transaction_id").ToString
+            stock_product_id = strreader("product_id").ToString
+            stock_quantity_onhand = strreader("quantity_onhand").ToString
+            stock_quantity_initial = strreader("quantity_initial").ToString
+            stock_cost = strreader("cost").ToString
+            stock_arrival_date = strreader("arrival_date").ToString
+            If Val(stock_quantity_onhand) <= Val(temp) Then
+                stock_quantity_onhand = Val(temp) + Val(stock_quantity_onhand)
+                rd_quantity = Val(temp) - Val(stock_quantity_onhand)
+            Else
+                stock_quantity_onhand = Val(stock_quantity_onhand) + Val(temp)
+                temp = Val(stock_quantity_onhand) - Val(temp)
+            End If
+        End While
+        sql = "update stocks set quantity_onhand='" + stock_quantity_onhand + "' where id = " + stock_id
+        query(sql)
+        Return True
     End Function
 End Module

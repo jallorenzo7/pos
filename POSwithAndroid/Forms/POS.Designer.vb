@@ -44,8 +44,8 @@ Partial Class pos
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnNextCustomer = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.txtbxDiscount = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -231,29 +231,31 @@ Partial Class pos
         Me.Button1.Text = "&Cash Out"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'txtbxDiscount
+        'Button2
         '
-        Me.txtbxDiscount.Location = New System.Drawing.Point(961, 352)
-        Me.txtbxDiscount.Name = "txtbxDiscount"
-        Me.txtbxDiscount.Size = New System.Drawing.Size(100, 22)
-        Me.txtbxDiscount.TabIndex = 22
+        Me.Button2.Location = New System.Drawing.Point(961, 340)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(100, 47)
+        Me.Button2.TabIndex = 22
+        Me.Button2.Text = "&Buyer Type Discount"
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'Label2
+        'Button3
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(881, 355)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 17)
-        Me.Label2.TabIndex = 23
-        Me.Label2.Text = "Discount:"
+        Me.Button3.Location = New System.Drawing.Point(961, 410)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(100, 66)
+        Me.Button3.TabIndex = 23
+        Me.Button3.Text = "&Transaction History"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'pos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1120, 595)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtbxDiscount)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnNextCustomer)
         Me.Controls.Add(Me.Label7)
@@ -304,7 +306,7 @@ Partial Class pos
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents btnNextCustomer As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents txtbxDiscount As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
 
 End Class

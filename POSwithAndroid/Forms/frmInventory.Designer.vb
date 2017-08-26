@@ -22,110 +22,64 @@ Partial Class frmInventory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.CashRegisterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InventoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StocksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProductsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnReports = New System.Windows.Forms.Button()
-        Me.MenuStrip1.SuspendLayout()
+        Me.listReceipt = New System.Windows.Forms.ListView()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'MenuStrip1
+        'listReceipt
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.InventoryToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.ClosToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1120, 28)
-        Me.MenuStrip1.TabIndex = 6
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.listReceipt.Location = New System.Drawing.Point(12, 52)
+        Me.listReceipt.Name = "listReceipt"
+        Me.listReceipt.Size = New System.Drawing.Size(500, 393)
+        Me.listReceipt.TabIndex = 7
+        Me.listReceipt.UseCompatibleStateImageBehavior = False
         '
-        'CashRegisterToolStripMenuItem
+        'Button1
         '
-        Me.CashRegisterToolStripMenuItem.Name = "CashRegisterToolStripMenuItem"
-        Me.CashRegisterToolStripMenuItem.Size = New System.Drawing.Size(110, 24)
-        Me.CashRegisterToolStripMenuItem.Text = "&Cash Register"
+        Me.Button1.Location = New System.Drawing.Point(366, 15)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(133, 28)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "&Close"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'InventoryToolStripMenuItem
+        'TextBox1
         '
-        Me.InventoryToolStripMenuItem.Enabled = False
-        Me.InventoryToolStripMenuItem.Name = "InventoryToolStripMenuItem"
-        Me.InventoryToolStripMenuItem.Size = New System.Drawing.Size(82, 24)
-        Me.InventoryToolStripMenuItem.Text = "&Inventory"
+        Me.TextBox1.Location = New System.Drawing.Point(121, 18)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(226, 22)
+        Me.TextBox1.TabIndex = 9
         '
-        'StocksToolStripMenuItem
+        'Label1
         '
-        Me.StocksToolStripMenuItem.Name = "StocksToolStripMenuItem"
-        Me.StocksToolStripMenuItem.Size = New System.Drawing.Size(63, 24)
-        Me.StocksToolStripMenuItem.Text = "&Stocks"
-        '
-        'ProductsToolStripMenuItem
-        '
-        Me.ProductsToolStripMenuItem.Name = "ProductsToolStripMenuItem"
-        Me.ProductsToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
-        Me.ProductsToolStripMenuItem.Text = "P&roducts"
-        '
-        'ClosToolStripMenuItem
-        '
-        Me.ClosToolStripMenuItem.Name = "ClosToolStripMenuItem"
-        Me.ClosToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
-        Me.ClosToolStripMenuItem.Text = "Clos&e"
-        '
-        'ListView1
-        '
-        Me.ListView1.Location = New System.Drawing.Point(12, 44)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(897, 539)
-        Me.ListView1.TabIndex = 7
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Location = New System.Drawing.Point(915, 44)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(193, 47)
-        Me.btnAdd.TabIndex = 8
-        Me.btnAdd.Text = "&Add Inventory"
-        Me.btnAdd.UseVisualStyleBackColor = True
-        '
-        'btnReports
-        '
-        Me.btnReports.Location = New System.Drawing.Point(915, 536)
-        Me.btnReports.Name = "btnReports"
-        Me.btnReports.Size = New System.Drawing.Size(193, 47)
-        Me.btnReports.TabIndex = 9
-        Me.btnReports.Text = "&Reports"
-        Me.btnReports.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(107, 17)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "Official Receipt:"
         '
         'frmInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1120, 595)
-        Me.Controls.Add(Me.btnReports)
-        Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.ListView1)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.ClientSize = New System.Drawing.Size(523, 453)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.listReceipt)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmInventory"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "POS"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents CashRegisterToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents InventoryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents StocksToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ProductsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ClosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ListView1 As System.Windows.Forms.ListView
-    Friend WithEvents btnAdd As System.Windows.Forms.Button
-    Friend WithEvents btnReports As System.Windows.Forms.Button
+    Friend WithEvents listReceipt As System.Windows.Forms.ListView
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
