@@ -37,7 +37,6 @@
         frmInventoryAdd.txtbxTransactionId.Text = ""
         frmInventoryAdd.txtboxCost.Text = ""
         frmInventoryAdd.txtBoxQuantity.Text = ""
-        frmInventoryAdd.txtdateTime.Value = ""
         frmInventoryAdd.lblStockId.Text = ""
         frmInventoryAdd.lblStockId.Visible = False
         frmInventoryAdd.Show()
