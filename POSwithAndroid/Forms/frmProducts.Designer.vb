@@ -33,12 +33,13 @@ Partial Class frmProducts
         Me.btnProduct = New System.Windows.Forms.Button()
         Me.listCategory = New System.Windows.Forms.ListView()
         Me.btnCategory = New System.Windows.Forms.Button()
+        Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.ClosToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.UserManagementToolStripMenuItem, Me.ClosToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1120, 28)
@@ -120,6 +121,12 @@ Partial Class frmProducts
         Me.btnCategory.Text = "&Add a category"
         Me.btnCategory.UseVisualStyleBackColor = True
         '
+        'UserManagementToolStripMenuItem
+        '
+        Me.UserManagementToolStripMenuItem.Name = "UserManagementToolStripMenuItem"
+        Me.UserManagementToolStripMenuItem.Size = New System.Drawing.Size(142, 24)
+        Me.UserManagementToolStripMenuItem.Text = "U&ser Management"
+        '
         'frmProducts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -153,4 +160,5 @@ Partial Class frmProducts
     Friend WithEvents btnProduct As System.Windows.Forms.Button
     Friend WithEvents listCategory As System.Windows.Forms.ListView
     Friend WithEvents btnCategory As System.Windows.Forms.Button
+    Friend WithEvents UserManagementToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

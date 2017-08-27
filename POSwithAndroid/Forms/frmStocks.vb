@@ -110,4 +110,9 @@
         End If
     End Sub
 
+    Private Sub UserManagementToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles UserManagementToolStripMenuItem.Click
+        frmuserMange.Show()
+        Me.Close()
+    End Sub
+
 End Class

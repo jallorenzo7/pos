@@ -24,6 +24,7 @@ Module mainModule
     Public typeData As New DataSet
     Public receipt_id, receipt_buyerType, receipt_quantity, receipt_total_amount, receipt_transaction_date As String
     Public rd_quantity, rd_amount, rd_id, rd_product As String
+    Public db_id, db_username, db_password, db_role As String
     Public dateNos As Date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
     Function dbconn()
         strcon = "Dsn=PostgreSQL30;database=dbij3u4aipolgu;server=ec2-23-23-228-115.compute-1.amazonaws.com;port=5432;uid=vyiwdhkruxsdeu;sslmode=allow;readonly=0;protocol=7.4;fakeoidindex=0;showoidcolumn=0;rowversioning=0;showsystemtables=0;fetch=100;unknownsizes=0;maxvarcharsize=255;maxlongvarcharsize=8190;debug=0;commlog=0;usedeclarefetch=0;textaslongvarchar=1;unknownsaslongvarchar=0;boolsaschar=1;parse=0;lfconversion=1;updatablecursors=1;trueisminus1=0;bi=0;byteaaslongvarbinary=1;useserversideprepare=1;lowercaseidentifier=0;gssauthusegss=0;xaopt=1"
@@ -323,44 +324,57 @@ Module mainModule
         Return 0
     End Function
     Function stockMinus(ByVal id As String)
-        sql = "SELECT * FROM product_receipt WHERE receipt_id = '" + id + "'"
-        strcommand = New Odbc.OdbcCommand(sql, con)
-        strreader = strcommand.ExecuteReader
-        While (strreader.Read)
-            rd_id = strreader("id").ToString
-            rd_product = strreader("product_id").ToString
-            rd_quantity = strreader("quantity").ToString
-            rd_amount = strreader("amount").ToString
-            Dim com As String = "SELECT * FROM stocks WHERE product_id = '" + rd_product + "'"
-            minusStock(com)
-        End While
+        sql = "SELECT id,quantity,product_id FROM product_receipt WHERE receipt_id = '" + id + "'"
+        stradapter = New OdbcDataAdapter(sql, con)
+        StrTable = New DataSet()
+        Dim ngRows = stradapter.Fill(StrTable, "product_receipst")
+        Dim j As Integer
+        Dim jCol As Integer = StrTable.Tables("product_receipst").Columns.Count
+        Dim m As Integer
+        Dim mRow As Integer = StrTable.Tables("product_receipst").Rows.Count
+        Dim ItRow(1000) As String
+        Dim quantu As String
+        For m = 0 To mRow - 1
+            For j = 0 To jCol - 1
+                If j = 1 Then
+                    quantu = StrTable.Tables("product_receipst").Rows(m).Item(j).ToString
+                ElseIf j = 2 Then
+                    Dim prod As String = StrTable.Tables("product_receipst").Rows(m).Item(j).ToString
+                    Dim com As String = "SELECT id,quantity_onhand FROM stocks WHERE product_id = '" + prod + "'"
+                    minusStock(com, quantu)
+                End If
+            Next
+        Next
         Return 0
     End Function
 
-    Function minusStock(ByVal procsql As String)
-        strreader = Nothing
-        strcommand = Nothing
-        PassSql = procsql
-        strcommand = New Odbc.OdbcCommand(PassSql, con)
-        strreader = strcommand.ExecuteReader
-        Dim temp As String = rd_quantity
-        While (strreader.Read)
-            stock_id = strreader("id").ToString
-            stock_tId = strreader("transaction_id").ToString
-            stock_product_id = strreader("product_id").ToString
-            stock_quantity_onhand = strreader("quantity_onhand").ToString
-            stock_quantity_initial = strreader("quantity_initial").ToString
-            stock_cost = strreader("cost").ToString
-            stock_arrival_date = strreader("arrival_date").ToString
-            If Val(stock_quantity_onhand) <= Val(temp) Then
-                temp = "0"
-                temp = Val(temp) - Val(stock_quantity_onhand)
-            Else
-                temp = Val(stock_quantity_onhand) - Val(temp)
-            End If
-        End While
-        sql = "update stocks set quantity_onhand='" + temp + "' where id = " + stock_id
-        query(sql)
+    Function minusStock(ByVal procsql As String, ByVal quan As String)
+        viewmysql(procsql, "stocksss")
+        Dim j As Integer
+        Dim jCol As Integer = StrTable.Tables("stocksss").Columns.Count
+        Dim m As Integer
+        Dim mRow As Integer = StrTable.Tables("stocksss").Rows.Count
+        Dim ItRow(1000) As String
+        Dim id_stock As String
+        For m = 0 To mRow - 1
+            For j = 0 To jCol - 1
+                If j = 1 Then
+                    Dim quantity_OH As String = StrTable.Tables("stocksss").Rows(m).Item(j).ToString
+                    If Val(quantity_OH) <= 0 Then
+                    ElseIf Val(quantity_OH) <= Val(quan) Then
+                        quantity_OH = "0"
+                        quan = Val(quan) - Val(quantity_OH)
+                    ElseIf Val(quantity_OH) > Val(quan) Then
+                        quantity_OH = "0"
+                        quan = Val(quantity_OH) - Val(quan)
+                    End If
+                    sql = "update stocks set quantity_onhand='" + quan + "' where id = " + id_stock
+                    query(sql)
+                Else
+                    id_stock = StrTable.Tables("stocksss").Rows(m).Item(j).ToString
+                End If
+            Next
+        Next
         Return True
     End Function
     Function getStock(ByVal procsql As String)
@@ -426,5 +440,20 @@ Module mainModule
         sql = "update stocks set quantity_onhand='" + stock_quantity_onhand + "' where id = " + stock_id
         query(sql)
         Return True
+    End Function
+    Function getUser(ByVal sql As String)
+        strcommand = New Odbc.OdbcCommand(sql, con)
+        strreader = strcommand.ExecuteReader
+        While (strreader.Read)
+            db_id = strreader("id").ToString
+            db_username = strreader("username").ToString
+            db_password = strreader("password").ToString
+            db_role = strreader("role").ToString
+        End While
+        If db_id = "" Then
+            Return False
+        Else
+            Return True
+        End If
     End Function
 End Module
