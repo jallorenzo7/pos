@@ -30,12 +30,13 @@ Partial Class frmuserMange
         Me.ClosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.listUserManage = New System.Windows.Forms.ListView()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.UserManagementToolStripMenuItem, Me.ClosToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.UserManagementToolStripMenuItem, Me.LogOutToolStripMenuItem, Me.ClosToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1120, 28)
@@ -90,6 +91,12 @@ Partial Class frmuserMange
         Me.Button1.Text = "&Add User"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'LogOutToolStripMenuItem
+        '
+        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
+        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
+        Me.LogOutToolStripMenuItem.Text = "Lo&g out"
+        '
         'frmuserMange
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -116,4 +123,5 @@ Partial Class frmuserMange
     Friend WithEvents ClosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents listUserManage As System.Windows.Forms.ListView
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents LogOutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

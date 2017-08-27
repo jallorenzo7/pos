@@ -2,6 +2,7 @@
     Dim exist As Boolean
     Private Sub frmuserMange_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ControlBox = False
+        getLoginForm()
         loadUser()
     End Sub
 
@@ -89,4 +90,10 @@
 
     End Sub
 
+    Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
+        pos.Show()
+        logged_in_role = ""
+        getLoginForm()
+        Me.Close()
+    End Sub
 End Class

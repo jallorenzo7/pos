@@ -26,6 +26,7 @@ Partial Class frmProducts
         Me.CashRegisterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StocksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.listProducts = New System.Windows.Forms.ListView()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -33,13 +34,13 @@ Partial Class frmProducts
         Me.btnProduct = New System.Windows.Forms.Button()
         Me.listCategory = New System.Windows.Forms.ListView()
         Me.btnCategory = New System.Windows.Forms.Button()
-        Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.UserManagementToolStripMenuItem, Me.ClosToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.UserManagementToolStripMenuItem, Me.LogOutToolStripMenuItem, Me.ClosToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1120, 28)
@@ -64,6 +65,12 @@ Partial Class frmProducts
         Me.ProductsToolStripMenuItem.Name = "ProductsToolStripMenuItem"
         Me.ProductsToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
         Me.ProductsToolStripMenuItem.Text = "P&roducts"
+        '
+        'UserManagementToolStripMenuItem
+        '
+        Me.UserManagementToolStripMenuItem.Name = "UserManagementToolStripMenuItem"
+        Me.UserManagementToolStripMenuItem.Size = New System.Drawing.Size(142, 24)
+        Me.UserManagementToolStripMenuItem.Text = "U&ser Management"
         '
         'ClosToolStripMenuItem
         '
@@ -121,11 +128,11 @@ Partial Class frmProducts
         Me.btnCategory.Text = "&Add a category"
         Me.btnCategory.UseVisualStyleBackColor = True
         '
-        'UserManagementToolStripMenuItem
+        'LogOutToolStripMenuItem
         '
-        Me.UserManagementToolStripMenuItem.Name = "UserManagementToolStripMenuItem"
-        Me.UserManagementToolStripMenuItem.Size = New System.Drawing.Size(142, 24)
-        Me.UserManagementToolStripMenuItem.Text = "U&ser Management"
+        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
+        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
+        Me.LogOutToolStripMenuItem.Text = "Lo&g out"
         '
         'frmProducts
         '
@@ -161,4 +168,5 @@ Partial Class frmProducts
     Friend WithEvents listCategory As System.Windows.Forms.ListView
     Friend WithEvents btnCategory As System.Windows.Forms.Button
     Friend WithEvents UserManagementToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LogOutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

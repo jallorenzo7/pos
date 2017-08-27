@@ -43,3 +43,4 @@ C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.vbproj.G
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.vbprojResolveAssemblyReference.cache
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.pos.resources
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmAddStudent.resources
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmLogIn.resources

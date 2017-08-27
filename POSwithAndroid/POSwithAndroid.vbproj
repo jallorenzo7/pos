@@ -103,6 +103,12 @@
     <Compile Include="Forms\frmInventoryAdd.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\frmLogIn.Designer.vb">
+      <DependentUpon>frmLogIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmProducts.Designer.vb">
       <DependentUpon>frmProducts.vb</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     <EmbeddedResource Include="Forms\frmInventoryAdd.resx">
       <DependentUpon>frmInventoryAdd.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogIn.resx">
+      <DependentUpon>frmLogIn.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProducts.resx">
       <DependentUpon>frmProducts.vb</DependentUpon>
     </EmbeddedResource>
@@ -190,7 +199,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="Modules\App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

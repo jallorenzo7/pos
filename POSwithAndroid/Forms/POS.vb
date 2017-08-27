@@ -30,6 +30,7 @@
         productPopulate()
         newReceipts()
         loadReceipts()
+        getLoginForm()
     End Sub
 
     Private Sub txtBxProductSearch_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBxProductSearch.KeyDown
@@ -138,5 +139,10 @@
     Private Sub UserManagementToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles UserManagementToolStripMenuItem.Click
         frmuserMange.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
+        logged_in_role = ""
+        getLoginForm()
     End Sub
 End Class

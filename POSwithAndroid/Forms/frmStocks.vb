@@ -4,6 +4,7 @@
     Private Sub frmStocks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ControlBox = False
         loadStocks()
+        getLoginForm()
     End Sub
 
     Private Sub CashRegisterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CashRegisterToolStripMenuItem.Click
@@ -115,4 +116,10 @@
         Me.Close()
     End Sub
 
+    Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
+        pos.Show()
+        logged_in_role = ""
+        getLoginForm()
+        Me.Close()
+    End Sub
 End Class

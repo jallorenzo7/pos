@@ -22,6 +22,7 @@ Module mainModule
     Public categs As New DataSet
     Public productsData As New DataSet
     Public typeData As New DataSet
+    Public logged_in_role As String
     Public receipt_id, receipt_buyerType, receipt_quantity, receipt_total_amount, receipt_transaction_date As String
     Public rd_quantity, rd_amount, rd_id, rd_product As String
     Public db_id, db_username, db_password, db_role As String
@@ -455,5 +456,24 @@ Module mainModule
         Else
             Return True
         End If
+    End Function
+    Function getLoginForm()
+        If logged_in_role = "" Then
+            pos.Enabled = False
+            frmLogIn.Show()
+        Else
+            If logged_in_role = "admin" Then
+                pos.UserManagementToolStripMenuItem.Visible = True
+                frmStocks.UserManagementToolStripMenuItem.Visible = True
+                frmProducts.UserManagementToolStripMenuItem.Visible = True
+                frmuserMange.UserManagementToolStripMenuItem.Visible = True
+            Else
+                pos.UserManagementToolStripMenuItem.Visible = False
+                frmStocks.UserManagementToolStripMenuItem.Visible = False
+                frmProducts.UserManagementToolStripMenuItem.Visible = False
+                frmuserMange.UserManagementToolStripMenuItem.Visible = False
+            End If
+        End If
+        Return 0
     End Function
 End Module
