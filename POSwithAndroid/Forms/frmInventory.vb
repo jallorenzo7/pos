@@ -60,7 +60,11 @@
             Dim id As String = Me.listReceipt.SelectedItems.Item(0).Text.ToString
             Dim result As Integer = MessageBox.Show("Do you want to void this?", "POS", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                MsgBox(result)
+                sql = "DELETE from receipts where id =" + id
+                query(sql)
+                newReceipts()
+                loadReceipts()
+                Me.loadReceipts()
             End If
         End If
     End Sub

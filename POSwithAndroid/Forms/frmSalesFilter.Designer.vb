@@ -23,9 +23,11 @@ Partial Class frmSalesFilter
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblTo = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.lblFrom = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'DateTimePicker1
@@ -35,14 +37,14 @@ Partial Class frmSalesFilter
         Me.DateTimePicker1.Size = New System.Drawing.Size(243, 22)
         Me.DateTimePicker1.TabIndex = 0
         '
-        'Label1
+        'lblTo
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(34, 46)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(72, 17)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Pick Date:"
+        Me.lblTo.AutoSize = True
+        Me.lblTo.Location = New System.Drawing.Point(34, 46)
+        Me.lblTo.Name = "lblTo"
+        Me.lblTo.Size = New System.Drawing.Size(72, 17)
+        Me.lblTo.TabIndex = 1
+        Me.lblTo.Text = "Pick Date:"
         '
         'Button1
         '
@@ -62,14 +64,32 @@ Partial Class frmSalesFilter
         Me.Button2.Text = "Load &Report"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(137, 12)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(243, 22)
+        Me.DateTimePicker2.TabIndex = 4
+        '
+        'lblFrom
+        '
+        Me.lblFrom.AutoSize = True
+        Me.lblFrom.Location = New System.Drawing.Point(34, 17)
+        Me.lblFrom.Name = "lblFrom"
+        Me.lblFrom.Size = New System.Drawing.Size(72, 17)
+        Me.lblFrom.TabIndex = 5
+        Me.lblFrom.Text = "Pick Date:"
+        '
         'frmSalesFilter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(420, 139)
+        Me.Controls.Add(Me.lblFrom)
+        Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblTo)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmSalesFilter"
@@ -80,7 +100,9 @@ Partial Class frmSalesFilter
 
     End Sub
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblTo As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents lblFrom As System.Windows.Forms.Label
 End Class

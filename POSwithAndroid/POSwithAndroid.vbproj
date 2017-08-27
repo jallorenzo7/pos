@@ -128,6 +128,12 @@
     <Compile Include="Forms\frmSalesFilter.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\frmStockReport.Designer.vb">
+      <DependentUpon>frmStockReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmStockReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmStocks.Designer.vb">
       <DependentUpon>frmStocks.vb</DependentUpon>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSalesFilter.resx">
       <DependentUpon>frmSalesFilter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmStockReport.resx">
+      <DependentUpon>frmStockReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmStocks.resx">
       <DependentUpon>frmStocks.vb</DependentUpon>

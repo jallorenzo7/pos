@@ -24,6 +24,7 @@
     End Sub
 
     Private Sub POS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ControlBox = False
         dbconn()
         typePopulate()
         categoryPopulate()
@@ -159,6 +160,8 @@
     End Sub
 
     Private Sub btnDailySales_Click(sender As Object, e As EventArgs) Handles btnDailySales.Click
+        frmSalesFilter.Text = "Sales Filter"
         frmSalesFilter.Show()
+
     End Sub
 End Class

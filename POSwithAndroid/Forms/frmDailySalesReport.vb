@@ -5,7 +5,8 @@
     End Sub
 
     Function loadReceipts(ByVal ids As String)
-        sql = "SELECT id, quantity, total_amount FROM receipts where transaction_date = '" + ids + "'"
+        MsgBox(ids)
+        sql = "SELECT id, quantity, total_amount FROM receipts where transaction_date > '" + ids + " 00:00:00' and transaction_date < '" + ids + " 23:59:59'"
         With Me.ListView1
             .Clear()
             .View = View.Details
@@ -41,5 +42,9 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        PrintDocument1.Print()
     End Sub
 End Class

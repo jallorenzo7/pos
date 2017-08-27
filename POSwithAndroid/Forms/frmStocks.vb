@@ -122,4 +122,9 @@
         getLoginForm()
         Me.Close()
     End Sub
+
+    Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
+        frmSalesFilter.Text = "Stock Filter"
+        frmSalesFilter.Show()
+    End Sub
 End Class
