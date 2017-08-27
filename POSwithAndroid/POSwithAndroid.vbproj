@@ -48,6 +48,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -91,6 +92,12 @@
     <Compile Include="Forms\frmCategory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\frmDailySalesReport.Designer.vb">
+      <DependentUpon>frmDailySalesReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDailySalesReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmInventory.Designer.vb">
       <DependentUpon>frmInventory.vb</DependentUpon>
     </Compile>
@@ -115,6 +122,12 @@
     <Compile Include="Forms\frmProducts.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\frmSalesFilter.Designer.vb">
+      <DependentUpon>frmSalesFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSalesFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmStocks.Designer.vb">
       <DependentUpon>frmStocks.vb</DependentUpon>
     </Compile>
@@ -132,6 +145,12 @@
     </Compile>
     <Compile Include="Forms\POS.Designer.vb">
       <DependentUpon>POS.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\printReceipt.Designer.vb">
+      <DependentUpon>printReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\printReceipt.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\mainModule.vb" />
@@ -161,6 +180,9 @@
     <EmbeddedResource Include="Forms\frmCategory.resx">
       <DependentUpon>frmCategory.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDailySalesReport.resx">
+      <DependentUpon>frmDailySalesReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmInventory.resx">
       <DependentUpon>frmInventory.vb</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +195,9 @@
     <EmbeddedResource Include="Forms\frmProducts.resx">
       <DependentUpon>frmProducts.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSalesFilter.resx">
+      <DependentUpon>frmSalesFilter.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmStocks.resx">
       <DependentUpon>frmStocks.vb</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\POS.resx">
       <DependentUpon>POS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\printReceipt.resx">
+      <DependentUpon>printReceipt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

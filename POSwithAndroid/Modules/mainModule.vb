@@ -27,6 +27,7 @@ Module mainModule
     Public rd_quantity, rd_amount, rd_id, rd_product As String
     Public db_id, db_username, db_password, db_role As String
     Public dateNos As Date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+    Public dateString As String = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
     Function dbconn()
         strcon = "Dsn=PostgreSQL30;database=dbij3u4aipolgu;server=ec2-23-23-228-115.compute-1.amazonaws.com;port=5432;uid=vyiwdhkruxsdeu;sslmode=allow;readonly=0;protocol=7.4;fakeoidindex=0;showoidcolumn=0;rowversioning=0;showsystemtables=0;fetch=100;unknownsizes=0;maxvarcharsize=255;maxlongvarcharsize=8190;debug=0;commlog=0;usedeclarefetch=0;textaslongvarchar=1;unknownsaslongvarchar=0;boolsaschar=1;parse=0;lfconversion=1;updatablecursors=1;trueisminus1=0;bi=0;byteaaslongvarbinary=1;useserversideprepare=1;lowercaseidentifier=0;gssauthusegss=0;xaopt=1"
         con.ConnectionString = strcon
@@ -474,6 +475,11 @@ Module mainModule
                 frmuserMange.UserManagementToolStripMenuItem.Visible = False
             End If
         End If
+        Return 0
+    End Function
+    Function printReceipt()
+        MsgBox("printing")
+
         Return 0
     End Function
 End Module

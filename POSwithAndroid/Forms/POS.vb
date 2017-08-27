@@ -112,9 +112,15 @@
         'stockMinus(Me.lblOr.Text)
         sql = "update receipts set transaction_date ='" + dateNos + "' where id = " + Me.lblOr.Text
         query(sql)
+        printReceipt.loadReceipts(Me.lblOr.Text)
+        printReceipt.lblDate.Text = dateString
+        printReceipt.lblAmountReceived.Text = Me.lblAReceived.Text
+        printReceipt.lblChange.Text = Me.lblChange.Text
+        printReceipt.lblTotal.Text = Me.lblTotalAmount.Text
+        printReceipt.lblReceiptNo.Text = Me.lblOr.Text
+        printReceipt.Show()
         newReceipts()
         loadReceipts()
-
         Me.lblAReceived.Text = "00.00"
         Me.lblChange.Text = "00.00"
         Me.lblTotalAmount.Text = "00.00"
@@ -128,6 +134,8 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim amount As String = InputBox("Percentage of discount.")
         Dim type As String = Me.cboxType.Text
+        printReceipt.lblVat.Text = Me.lblTotalAmount.Text
+        printReceipt.lblDiscount.Text = Val(Me.lblTotalAmount.Text) * (Val(amount) / 100)
         discountInput(amount, type)
     End Sub
 
@@ -144,5 +152,13 @@
     Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
         logged_in_role = ""
         getLoginForm()
+    End Sub
+
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+
+    End Sub
+
+    Private Sub btnDailySales_Click(sender As Object, e As EventArgs) Handles btnDailySales.Click
+        frmSalesFilter.Show()
     End Sub
 End Class

@@ -48,6 +48,8 @@ Partial Class pos
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.btnDailySales = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -263,11 +265,24 @@ Partial Class pos
         Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
         Me.LogOutToolStripMenuItem.Text = "Lo&g out"
         '
+        'PrintDocument1
+        '
+        '
+        'btnDailySales
+        '
+        Me.btnDailySales.Location = New System.Drawing.Point(961, 502)
+        Me.btnDailySales.Name = "btnDailySales"
+        Me.btnDailySales.Size = New System.Drawing.Size(100, 59)
+        Me.btnDailySales.TabIndex = 24
+        Me.btnDailySales.Text = "&Daily Sales"
+        Me.btnDailySales.UseVisualStyleBackColor = True
+        '
         'pos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1120, 595)
+        Me.Controls.Add(Me.btnDailySales)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -324,5 +339,7 @@ Partial Class pos
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents UserManagementToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
+    Friend WithEvents btnDailySales As System.Windows.Forms.Button
 
 End Class
