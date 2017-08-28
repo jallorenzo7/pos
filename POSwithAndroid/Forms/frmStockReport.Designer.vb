@@ -23,6 +23,9 @@ Partial Class frmStockReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblTo = New System.Windows.Forms.Label()
+        Me.listStocks = New System.Windows.Forms.ListView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -37,9 +40,6 @@ Partial Class frmStockReport
         Me.lblFrom = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.listStocks = New System.Windows.Forms.ListView()
-        Me.lblTo = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
@@ -66,6 +66,37 @@ Partial Class frmStockReport
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(837, 754)
         Me.Panel1.TabIndex = 56
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(522, 52)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(17, 20)
+        Me.Label5.TabIndex = 55
+        Me.Label5.Text = "-"
+        '
+        'lblTo
+        '
+        Me.lblTo.AutoSize = True
+        Me.lblTo.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTo.Location = New System.Drawing.Point(547, 52)
+        Me.lblTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTo.Name = "lblTo"
+        Me.lblTo.Size = New System.Drawing.Size(160, 20)
+        Me.lblTo.TabIndex = 54
+        Me.lblTo.Text = "January 13, 2014"
+        '
+        'listStocks
+        '
+        Me.listStocks.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.listStocks.Location = New System.Drawing.Point(24, 201)
+        Me.listStocks.Name = "listStocks"
+        Me.listStocks.Size = New System.Drawing.Size(753, 182)
+        Me.listStocks.TabIndex = 53
+        Me.listStocks.UseCompatibleStateImageBehavior = False
         '
         'Label1
         '
@@ -225,37 +256,6 @@ Partial Class frmStockReport
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "STOCKS-IN"
         '
-        'listStocks
-        '
-        Me.listStocks.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.listStocks.Location = New System.Drawing.Point(24, 201)
-        Me.listStocks.Name = "listStocks"
-        Me.listStocks.Size = New System.Drawing.Size(753, 182)
-        Me.listStocks.TabIndex = 53
-        Me.listStocks.UseCompatibleStateImageBehavior = False
-        '
-        'lblTo
-        '
-        Me.lblTo.AutoSize = True
-        Me.lblTo.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTo.Location = New System.Drawing.Point(547, 52)
-        Me.lblTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblTo.Name = "lblTo"
-        Me.lblTo.Size = New System.Drawing.Size(160, 20)
-        Me.lblTo.TabIndex = 54
-        Me.lblTo.Text = "January 13, 2014"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(522, 52)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(17, 20)
-        Me.Label5.TabIndex = 55
-        Me.Label5.Text = "-"
-        '
         'Button2
         '
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
@@ -284,7 +284,7 @@ Partial Class frmStockReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(856, 849)
+        Me.ClientSize = New System.Drawing.Size(865, 849)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
