@@ -203,9 +203,9 @@ Partial Class printReceipt
         Me.vat.Location = New System.Drawing.Point(31, 11)
         Me.vat.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.vat.Name = "vat"
-        Me.vat.Size = New System.Drawing.Size(119, 17)
+        Me.vat.Size = New System.Drawing.Size(122, 17)
         Me.vat.TabIndex = 47
-        Me.vat.Text = "Subtotal         :"
+        Me.vat.Text = "VAT                :"
         '
         'lblTotal
         '

@@ -110,7 +110,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnNextCustomer.Click
-        'stockMinus(Me.lblOr.Text)
+        stockMinus(Me.lblOr.Text)
         sql = "update receipts set transaction_date ='" + dateNos + "' where id = " + Me.lblOr.Text
         query(sql)
         printReceipt.loadReceipts(Me.lblOr.Text)
@@ -119,6 +119,7 @@
         printReceipt.lblChange.Text = Me.lblChange.Text
         printReceipt.lblTotal.Text = Me.lblTotalAmount.Text
         printReceipt.lblReceiptNo.Text = Me.lblOr.Text
+        printReceipt.lblVat.Text = Val(Me.lblTotalAmount.Text) * 0.12
         printReceipt.Show()
         newReceipts()
         loadReceipts()
@@ -135,7 +136,6 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim amount As String = InputBox("Percentage of discount.")
         Dim type As String = Me.cboxType.Text
-        printReceipt.lblVat.Text = Me.lblTotalAmount.Text
         printReceipt.lblDiscount.Text = Val(Me.lblTotalAmount.Text) * (Val(amount) / 100)
         discountInput(amount, type)
     End Sub

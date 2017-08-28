@@ -13,7 +13,9 @@
     End Sub
 
     Function loadStocks(ByVal from As String, ByVal fr As String)
-        sql = "SELECT * FROM stocks where arrival_date > '" + from + " 00:00:00' and arrival_date < '" + fr + " 23:59:59'"
+        MsgBox(from)
+        MsgBox(fr)
+        sql = "SELECT transaction_id,product_id,quantity_onhand,quantity_initial,cost,arrival_date  FROM stocks where arrival_date > '" + from + " 00:00:00' and arrival_date < '" + fr + " 23:59:59'"
         With Me.listStocks
             .Clear()
             .View = View.Details
@@ -21,6 +23,7 @@
             .GridLines = True
             .Columns.Add("Transaction ID", 100, HorizontalAlignment.Left)
             .Columns.Add("Product", 100, HorizontalAlignment.Left)
+            .Columns.Add("On-hand Quantity", 100, HorizontalAlignment.Left)
             .Columns.Add("Initial Quantity", 100, HorizontalAlignment.Left)
             .Columns.Add("Cost", 100, HorizontalAlignment.Left)
             .Columns.Add("Arrival Date", 100, HorizontalAlignment.Left)
