@@ -314,7 +314,7 @@ Module mainModule
     Function discountInput(ByVal amount As String, ByVal type As string)
         Dim id As String = pos.lblOr.Text
         checkExistingReceipt()
-        Dim tm As String = receipt_total_amount * (Val(amount) / 100)
+        Dim tm As String = Val(receipt_total_amount) - Val(receipt_total_amount * (Val(amount) / 100))
         sql = "update receipts set buyer_type_id = '" + type + "', total_amount = '" + tm + "' where id =" + id
         query(sql)
         clearVariables()
