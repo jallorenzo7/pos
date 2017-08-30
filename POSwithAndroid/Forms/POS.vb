@@ -136,7 +136,8 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim amount As String = InputBox("Percentage of discount.")
         Dim type As String = Me.cboxType.Text
-        printReceipt.lblDiscount.Text = Val(Me.lblTotalAmount.Text) * (Val(amount) / 100)
+        Dim disc As String = Val(Me.lblTotalAmount.Text) - (Val(Me.lblTotalAmount.Text) * (Val(amount) / 100))
+        printReceipt.lblDiscount.Text = disc
         discountInput(amount, type)
     End Sub
 
