@@ -170,9 +170,9 @@ Partial Class printReceipt
         Me.subTotal.Location = New System.Drawing.Point(31, 30)
         Me.subTotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.subTotal.Name = "subTotal"
-        Me.subTotal.Size = New System.Drawing.Size(121, 17)
+        Me.subTotal.Size = New System.Drawing.Size(126, 17)
         Me.subTotal.TabIndex = 51
-        Me.subTotal.Text = "Discount         :"
+        Me.subTotal.Text = "Discount          :"
         '
         'Cash
         '
@@ -203,9 +203,9 @@ Partial Class printReceipt
         Me.vat.Location = New System.Drawing.Point(31, 11)
         Me.vat.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.vat.Name = "vat"
-        Me.vat.Size = New System.Drawing.Size(122, 17)
+        Me.vat.Size = New System.Drawing.Size(127, 17)
         Me.vat.TabIndex = 47
-        Me.vat.Text = "VAT                :"
+        Me.vat.Text = "VAT(12%)        :"
         '
         'lblTotal
         '
