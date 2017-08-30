@@ -20,7 +20,7 @@
                     Me.txtbxTransactionId.Text = ""
                     Me.txtBoxQuantity.Text = ""
                     Me.txtboxCost.Text = ""
-                    frmStocks.loadStocks()
+                frmStocks.loadStocks("", "desc")
                     frmStocks.Enabled = True
                     Me.Hide()
                 Else
@@ -29,7 +29,7 @@
                     Me.txtbxTransactionId.Text = ""
                     Me.txtBoxQuantity.Text = ""
                     Me.txtboxCost.Text = ""
-                    frmStocks.loadStocks()
+                frmStocks.loadStocks("", "desc")
                     frmStocks.Enabled = True
                     Me.Hide()
                 End If

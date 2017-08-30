@@ -1,9 +1,9 @@
 ﻿Public Class frmStocks
     Dim exist As Boolean
-
+    Dim sorting As String = "desc"
     Private Sub frmStocks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ControlBox = False
-        loadStocks()
+        loadStocks("", "desc")
         getLoginForm()
     End Sub
 
@@ -44,8 +44,27 @@
         Me.Enabled = False
     End Sub
 
-    Function loadStocks()
-        sql = "SELECT * FROM stocks"
+    Function loadStocks(ByVal qu As String, ByVal sort As String)
+        If qu = "" Then
+            sql = "SELECT * FROM stocks"
+        ElseIf qu = "3" Then
+            sql = "SELECT * FROM stocks Order By quantity_onhand " + sort
+        ElseIf qu = "0" Then
+            sql = "SELECT * FROM stocks Order By id " + sort
+        ElseIf qu = "1" Then
+            sql = "SELECT * FROM stocks Order By transaction_id " + sort
+        ElseIf qu = "4" Then
+            sql = "SELECT * FROM stocks Order By quantity_initial " + sort
+        ElseIf qu = "5" Then
+            sql = "SELECT * FROM stocks Order By cost " + sort
+        ElseIf qu = "6" Then
+            sql = "SELECT * FROM stocks Order By arrival_date " + sort
+        End If
+        If sorting = "asc" Then
+            sorting = "desc"
+        Else
+            sorting = "asc"
+        End If
         With Me.listStocks
             .Clear()
             .View = View.Details
@@ -90,6 +109,13 @@
         Return (0)
     End Function
 
+    Private Sub listStocks_ColumnClick(sender As Object, e As ColumnClickEventArgs) Handles listStocks.ColumnClick
+        If e.Column = 2 Then
+        Else
+            loadStocks(e.Column, sorting)
+        End If
+    End Sub
+
     Private Sub listStocks_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles listStocks.MouseDoubleClick
         If listStocks.SelectedItems.Item(0).Text.ToString Then
             Dim id As String = listStocks.SelectedItems.Item(0).Text.ToString
@@ -127,4 +153,5 @@
         frmSalesFilter.Text = "Stock Filter"
         frmSalesFilter.Show()
     End Sub
+
 End Class
