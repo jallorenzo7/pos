@@ -33,6 +33,7 @@ Partial Class pos
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.StocksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtboxQuantity = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -47,9 +48,10 @@ Partial Class pos
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.btnDailySales = New System.Windows.Forms.Button()
+        Me.lblDiscount = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -80,7 +82,7 @@ Partial Class pos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(476, 410)
+        Me.Label1.Location = New System.Drawing.Point(474, 410)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(137, 17)
         Me.Label1.TabIndex = 5
@@ -89,7 +91,7 @@ Partial Class pos
         'lblTotalAmount
         '
         Me.lblTotalAmount.AutoSize = True
-        Me.lblTotalAmount.Location = New System.Drawing.Point(616, 410)
+        Me.lblTotalAmount.Location = New System.Drawing.Point(614, 410)
         Me.lblTotalAmount.Name = "lblTotalAmount"
         Me.lblTotalAmount.Size = New System.Drawing.Size(44, 17)
         Me.lblTotalAmount.TabIndex = 6
@@ -135,6 +137,12 @@ Partial Class pos
         Me.UserManagementToolStripMenuItem.Size = New System.Drawing.Size(142, 24)
         Me.UserManagementToolStripMenuItem.Text = "U&ser Management"
         '
+        'LogOutToolStripMenuItem
+        '
+        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
+        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
+        Me.LogOutToolStripMenuItem.Text = "Lo&g out"
+        '
         'txtboxQuantity
         '
         Me.txtboxQuantity.Location = New System.Drawing.Point(961, 252)
@@ -173,7 +181,7 @@ Partial Class pos
         'lblAReceived
         '
         Me.lblAReceived.AutoSize = True
-        Me.lblAReceived.Location = New System.Drawing.Point(613, 440)
+        Me.lblAReceived.Location = New System.Drawing.Point(614, 459)
         Me.lblAReceived.Name = "lblAReceived"
         Me.lblAReceived.Size = New System.Drawing.Size(44, 17)
         Me.lblAReceived.TabIndex = 15
@@ -182,7 +190,7 @@ Partial Class pos
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(476, 440)
+        Me.Label6.Location = New System.Drawing.Point(477, 459)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(136, 17)
         Me.Label6.TabIndex = 14
@@ -259,12 +267,6 @@ Partial Class pos
         Me.Button3.Text = "&Transaction History"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'LogOutToolStripMenuItem
-        '
-        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
-        Me.LogOutToolStripMenuItem.Text = "Lo&g out"
-        '
         'PrintDocument1
         '
         '
@@ -277,11 +279,31 @@ Partial Class pos
         Me.btnDailySales.Text = "&Daily Sales"
         Me.btnDailySales.UseVisualStyleBackColor = True
         '
+        'lblDiscount
+        '
+        Me.lblDiscount.AutoSize = True
+        Me.lblDiscount.Location = New System.Drawing.Point(613, 435)
+        Me.lblDiscount.Name = "lblDiscount"
+        Me.lblDiscount.Size = New System.Drawing.Size(44, 17)
+        Me.lblDiscount.TabIndex = 26
+        Me.lblDiscount.Text = "00.00"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(476, 435)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(132, 17)
+        Me.Label8.TabIndex = 25
+        Me.Label8.Text = "Discount:              ₱"
+        '
         'pos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1120, 595)
+        Me.Controls.Add(Me.lblDiscount)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btnDailySales)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -341,5 +363,7 @@ Partial Class pos
     Friend WithEvents LogOutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
     Friend WithEvents btnDailySales As System.Windows.Forms.Button
+    Friend WithEvents lblDiscount As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 
 End Class

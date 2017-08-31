@@ -27,10 +27,10 @@ Partial Class frmuserMange
         Me.StocksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.listUserManage = New System.Windows.Forms.ListView()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -68,6 +68,12 @@ Partial Class frmuserMange
         Me.UserManagementToolStripMenuItem.Size = New System.Drawing.Size(142, 24)
         Me.UserManagementToolStripMenuItem.Text = "U&ser Management"
         '
+        'LogOutToolStripMenuItem
+        '
+        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
+        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
+        Me.LogOutToolStripMenuItem.Text = "Lo&g out"
+        '
         'ClosToolStripMenuItem
         '
         Me.ClosToolStripMenuItem.Name = "ClosToolStripMenuItem"
@@ -90,12 +96,6 @@ Partial Class frmuserMange
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "&Add User"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'LogOutToolStripMenuItem
-        '
-        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
-        Me.LogOutToolStripMenuItem.Text = "Lo&g out"
         '
         'frmuserMange
         '

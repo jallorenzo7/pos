@@ -136,6 +136,7 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim amount As String = InputBox("Percentage of discount.")
         Dim type As String = Me.cboxType.Text
+        Me.lblDiscount.Text = Val(Me.lblTotalAmount.Text) * (Val(amount) / 100)
         Dim disc As String = Val(Me.lblTotalAmount.Text) - (Val(Me.lblTotalAmount.Text) * (Val(amount) / 100))
         printReceipt.lblDiscount.Text = disc
         discountInput(amount, type)
@@ -163,6 +164,14 @@
     Private Sub btnDailySales_Click(sender As Object, e As EventArgs) Handles btnDailySales.Click
         frmSalesFilter.Text = "Sales Filter"
         frmSalesFilter.Show()
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub lblTotalAmount_Click(sender As Object, e As EventArgs) Handles lblTotalAmount.Click
 
     End Sub
 End Class
