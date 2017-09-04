@@ -48,3 +48,6 @@ C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.printRec
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmDailySalesReport.resources
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmSalesFilter.resources
 C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\obj\Debug\POSwithAndroid.frmStockReport.resources
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\bin\Debug\BCrypt.Net.dll
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\bin\Debug\BCrypt.Net.pdb
+C:\Users\Koodi\Pictures\try\pos\POSwithAndroid\bin\Debug\BCrypt.Net.xml

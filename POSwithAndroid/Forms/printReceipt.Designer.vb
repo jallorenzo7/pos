@@ -46,6 +46,8 @@ Partial Class printReceipt
         Me.listDetail = New System.Windows.Forms.ListView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblEmployeeId = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -53,6 +55,8 @@ Partial Class printReceipt
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel1.Controls.Add(Me.lblEmployeeId)
+        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.lblDate)
         Me.Panel1.Controls.Add(Me.Label5)
@@ -306,6 +310,24 @@ Partial Class printReceipt
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Orchid's Bookstore"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(4, 111)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(91, 17)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Employee ID:"
+        '
+        'lblEmployeeId
+        '
+        Me.lblEmployeeId.AutoSize = True
+        Me.lblEmployeeId.Location = New System.Drawing.Point(104, 111)
+        Me.lblEmployeeId.Name = "lblEmployeeId"
+        Me.lblEmployeeId.Size = New System.Drawing.Size(91, 17)
+        Me.lblEmployeeId.TabIndex = 48
+        Me.lblEmployeeId.Text = "Employee ID:"
+        '
         'printReceipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -347,4 +369,6 @@ Partial Class printReceipt
     Friend WithEvents lblTotal As System.Windows.Forms.Label
     Friend WithEvents TotalAmount As System.Windows.Forms.Label
     Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
+    Friend WithEvents lblEmployeeId As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class

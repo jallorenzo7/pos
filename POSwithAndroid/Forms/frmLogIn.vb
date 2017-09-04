@@ -9,11 +9,13 @@
             MsgBox("Please fill the requirements needed")
         Else
             sql = "SELECT * from users where username = '" + Me.txtUsername.Text + "'"
+            Dim password As String = Md5FromString(Me.txtboxPassword.Text)
             If getUser(sql) Then
-                If Me.txtUsername.Text = db_username And Me.txtboxPassword.Text = db_password Then
+                If Me.txtUsername.Text = db_username And password = db_password Then
                     logged_in_role = db_role
                     Me.Close()
                     pos.Enabled = True
+                    printReceipt.lblEmployeeId.Text = db_id
                     getLoginForm()
                 Else
                     MsgBox("User does not exist in the database")

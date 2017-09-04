@@ -15,9 +15,10 @@
             MsgBox("Please fill up the the required information.")
         Else
             If Me.txtboxPassword.Text = Me.txtRetype.Text Then
+
                 If Me.btnAdd.Text = "&Add" Then
                     Dim role As String = Me.cboxRole.Text
-                    sql = "insert into users (username, password, role) values('" + Me.txtboxUserName.Text + "','" + Me.txtRetype.Text + "','" + role.ToLower + "')"
+                    sql = "insert into users (username, password, role) values('" + Me.txtboxUserName.Text + "','" + Md5FromString(Me.txtRetype.Text) + "','" + role.ToLower + "')"
                     query(sql)
                     Me.txtRetype.Text = ""
                     Me.txtboxUserName.Text = ""
@@ -28,7 +29,7 @@
                     Me.Close()
                 Else
                     Dim role As String = Me.cboxRole.Text
-                    sql = "update users set username='" + Me.txtboxUserName.Text + "', password='" + Me.txtRetype.Text + "', role='" + role.ToLower + "' where id=" + Me.lblUserId.Text
+                    sql = "update users set username='" + Me.txtboxUserName.Text + "', password='" + Md5FromString(Me.txtRetype.Text) + "', role='" + role.ToLower + "' where id=" + Me.lblUserId.Text
                     query(sql)
                     Me.txtRetype.Text = ""
                     Me.txtboxUserName.Text = ""
