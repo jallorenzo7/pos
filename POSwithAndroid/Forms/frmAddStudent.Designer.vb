@@ -33,11 +33,13 @@ Partial Class frmAddStudent
         Me.cboxRole = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblUserId = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtName = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(349, 219)
+        Me.Button1.Location = New System.Drawing.Point(349, 271)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(84, 32)
         Me.Button1.TabIndex = 6
@@ -46,14 +48,14 @@ Partial Class frmAddStudent
         '
         'txtboxUserName
         '
-        Me.txtboxUserName.Location = New System.Drawing.Point(180, 31)
+        Me.txtboxUserName.Location = New System.Drawing.Point(180, 83)
         Me.txtboxUserName.Name = "txtboxUserName"
         Me.txtboxUserName.Size = New System.Drawing.Size(253, 22)
         Me.txtboxUserName.TabIndex = 1
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(31, 219)
+        Me.btnAdd.Location = New System.Drawing.Point(31, 271)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(84, 32)
         Me.btnAdd.TabIndex = 5
@@ -63,7 +65,7 @@ Partial Class frmAddStudent
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(28, 34)
+        Me.Label1.Location = New System.Drawing.Point(28, 86)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(77, 17)
         Me.Label1.TabIndex = 3
@@ -72,7 +74,7 @@ Partial Class frmAddStudent
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 76)
+        Me.Label2.Location = New System.Drawing.Point(28, 128)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(73, 17)
         Me.Label2.TabIndex = 5
@@ -80,7 +82,7 @@ Partial Class frmAddStudent
         '
         'txtboxPassword
         '
-        Me.txtboxPassword.Location = New System.Drawing.Point(180, 73)
+        Me.txtboxPassword.Location = New System.Drawing.Point(180, 125)
         Me.txtboxPassword.Name = "txtboxPassword"
         Me.txtboxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtboxPassword.Size = New System.Drawing.Size(253, 22)
@@ -89,7 +91,7 @@ Partial Class frmAddStudent
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(28, 114)
+        Me.Label3.Location = New System.Drawing.Point(28, 166)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(127, 17)
         Me.Label3.TabIndex = 7
@@ -97,7 +99,7 @@ Partial Class frmAddStudent
         '
         'txtRetype
         '
-        Me.txtRetype.Location = New System.Drawing.Point(180, 111)
+        Me.txtRetype.Location = New System.Drawing.Point(180, 163)
         Me.txtRetype.Name = "txtRetype"
         Me.txtRetype.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtRetype.Size = New System.Drawing.Size(253, 22)
@@ -108,7 +110,7 @@ Partial Class frmAddStudent
         Me.cboxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboxRole.FormattingEnabled = True
         Me.cboxRole.Items.AddRange(New Object() {"Admin", "Employee"})
-        Me.cboxRole.Location = New System.Drawing.Point(180, 160)
+        Me.cboxRole.Location = New System.Drawing.Point(180, 212)
         Me.cboxRole.Name = "cboxRole"
         Me.cboxRole.Size = New System.Drawing.Size(253, 24)
         Me.cboxRole.TabIndex = 4
@@ -116,7 +118,7 @@ Partial Class frmAddStudent
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(28, 163)
+        Me.Label4.Location = New System.Drawing.Point(28, 215)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(41, 17)
         Me.Label4.TabIndex = 9
@@ -125,16 +127,34 @@ Partial Class frmAddStudent
         'lblUserId
         '
         Me.lblUserId.AutoSize = True
-        Me.lblUserId.Location = New System.Drawing.Point(239, 219)
+        Me.lblUserId.Location = New System.Drawing.Point(239, 271)
         Me.lblUserId.Name = "lblUserId"
         Me.lblUserId.Size = New System.Drawing.Size(0, 17)
         Me.lblUserId.TabIndex = 10
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(28, 44)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(49, 17)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Name:"
+        '
+        'txtName
+        '
+        Me.txtName.Location = New System.Drawing.Point(180, 41)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(253, 22)
+        Me.txtName.TabIndex = 11
         '
         'frmAddStudent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(467, 274)
+        Me.ClientSize = New System.Drawing.Size(467, 325)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.lblUserId)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.cboxRole)
@@ -165,4 +185,6 @@ Partial Class frmAddStudent
     Friend WithEvents cboxRole As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents lblUserId As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents txtName As System.Windows.Forms.TextBox
 End Class

@@ -38,13 +38,14 @@
     End Sub
 
     Function loadUser()
-        sql = "SELECT id, username, role FROM users"
+        sql = "SELECT id, name, username, role FROM users"
         With Me.listUserManage
             .Clear()
             .View = View.Details
             .FullRowSelect = True
             .GridLines = True
             .Columns.Add("id", 100, HorizontalAlignment.Left)
+            .Columns.Add("Name", 250, HorizontalAlignment.Left)
             .Columns.Add("Username", 250, HorizontalAlignment.Left)
             .Columns.Add("Role", 100, HorizontalAlignment.Left)
         End With
@@ -77,8 +78,9 @@
             exist = getUser(sql)
             If exist Then
                 frmAddStudent.txtboxUserName.Text = db_username
-                frmAddStudent.txtboxPassword.Text = db_password
-                frmAddStudent.txtRetype.Text = db_password
+                frmAddStudent.txtName.Text = db_name
+                frmAddStudent.txtboxPassword.Text = ""
+                frmAddStudent.txtRetype.Text = ""
                 frmAddStudent.cboxRole.Text = db_role
                 frmAddStudent.lblUserId.Text = db_id
                 frmAddStudent.lblUserId.Visible = False

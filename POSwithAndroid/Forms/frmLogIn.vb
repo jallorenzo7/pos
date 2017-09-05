@@ -16,6 +16,7 @@
                     Me.Close()
                     pos.Enabled = True
                     printReceipt.lblEmployeeId.Text = db_id
+                    printReceipt.lblEmpName.Text = db_name
                     getLoginForm()
                 Else
                     MsgBox("User does not exist in the database")

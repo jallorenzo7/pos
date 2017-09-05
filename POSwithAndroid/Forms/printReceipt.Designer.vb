@@ -23,6 +23,8 @@ Partial Class printReceipt
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblEmployeeId = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblThank = New System.Windows.Forms.Label()
         Me.lblOR = New System.Windows.Forms.Label()
@@ -46,8 +48,8 @@ Partial Class printReceipt
         Me.listDetail = New System.Windows.Forms.ListView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.lblEmployeeId = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblEmpName = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -55,6 +57,8 @@ Partial Class printReceipt
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel1.Controls.Add(Me.lblEmpName)
+        Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.lblEmployeeId)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -70,6 +74,24 @@ Partial Class printReceipt
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(470, 471)
         Me.Panel1.TabIndex = 0
+        '
+        'lblEmployeeId
+        '
+        Me.lblEmployeeId.AutoSize = True
+        Me.lblEmployeeId.Location = New System.Drawing.Point(104, 111)
+        Me.lblEmployeeId.Name = "lblEmployeeId"
+        Me.lblEmployeeId.Size = New System.Drawing.Size(91, 17)
+        Me.lblEmployeeId.TabIndex = 48
+        Me.lblEmployeeId.Text = "Employee ID:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(4, 111)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(91, 17)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Employee ID:"
         '
         'Panel2
         '
@@ -310,23 +332,23 @@ Partial Class printReceipt
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Orchid's Bookstore"
         '
-        'Label6
+        'Label7
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(4, 111)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(91, 17)
-        Me.Label6.TabIndex = 1
-        Me.Label6.Text = "Employee ID:"
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(227, 111)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(115, 17)
+        Me.Label7.TabIndex = 49
+        Me.Label7.Text = "Employee Name:"
         '
-        'lblEmployeeId
+        'lblEmpName
         '
-        Me.lblEmployeeId.AutoSize = True
-        Me.lblEmployeeId.Location = New System.Drawing.Point(104, 111)
-        Me.lblEmployeeId.Name = "lblEmployeeId"
-        Me.lblEmployeeId.Size = New System.Drawing.Size(91, 17)
-        Me.lblEmployeeId.TabIndex = 48
-        Me.lblEmployeeId.Text = "Employee ID:"
+        Me.lblEmpName.AutoSize = True
+        Me.lblEmpName.Location = New System.Drawing.Point(348, 111)
+        Me.lblEmpName.Name = "lblEmpName"
+        Me.lblEmpName.Size = New System.Drawing.Size(91, 17)
+        Me.lblEmpName.TabIndex = 50
+        Me.lblEmpName.Text = "Employee ID:"
         '
         'printReceipt
         '
@@ -371,4 +393,6 @@ Partial Class printReceipt
     Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
     Friend WithEvents lblEmployeeId As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lblEmpName As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

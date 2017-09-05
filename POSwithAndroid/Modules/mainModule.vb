@@ -28,7 +28,7 @@ Module mainModule
     Public logged_in_role As String
     Public receipt_id, receipt_buyerType, receipt_quantity, receipt_total_amount, receipt_transaction_date As String
     Public rd_quantity, rd_amount, rd_id, rd_product As String
-    Public db_id, db_username, db_password, db_role As String
+    Public db_id, db_username, db_password, db_role, db_name As String
     Public dateNos As Date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
     Public inPass As String
     Public dateString As String = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
@@ -476,6 +476,7 @@ Module mainModule
         While (strreader.Read)
             db_id = strreader("id").ToString
             db_username = strreader("username").ToString
+            db_name = strreader("name").ToString
             db_password = strreader("password").ToString
             db_role = strreader("role").ToString
         End While
