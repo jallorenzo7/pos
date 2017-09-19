@@ -87,7 +87,7 @@
         Dim ItRow(1000) As String
         For m = 0 To mRow - 1
             For j = 0 To jCol - 1
-                If j = 2 Then
+                If j = 3 Then
                     Dim id As String = StrTable.Tables("LogUser").Rows(m).Item(j).ToString
                     If String.IsNullOrEmpty(id) Then
                     Else

@@ -22,115 +22,109 @@ Partial Class frmStockReport
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblTo = New System.Windows.Forms.Label()
-        Me.listStocks = New System.Windows.Forms.ListView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.PrintDocument2 = New System.Drawing.Printing.PrintDocument()
+        Me.lblQuantity = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblFrom = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.lblQuantity = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.lblFrom = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.Panel1.SuspendLayout()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblTo = New System.Windows.Forms.Label()
+        Me.listStocks = New System.Windows.Forms.ListView()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel1
+        'Button2
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.lblTo)
-        Me.Panel1.Controls.Add(Me.listStocks)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.Panel4)
-        Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.lblQuantity)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.lblFrom)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(10, 47)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(837, 754)
-        Me.Panel1.TabIndex = 56
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.Location = New System.Drawing.Point(729, 14)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(100, 25)
+        Me.Button2.TabIndex = 66
+        Me.Button2.Text = "&Close"
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'Label5
+        'Button1
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(634, 52)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(17, 20)
-        Me.Label5.TabIndex = 55
-        Me.Label5.Text = "-"
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Location = New System.Drawing.Point(624, 14)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 25)
+        Me.Button1.TabIndex = 67
+        Me.Button1.Text = "&Print"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'lblTo
+        'lblQuantity
         '
-        Me.lblTo.AutoSize = True
-        Me.lblTo.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTo.Location = New System.Drawing.Point(659, 52)
-        Me.lblTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblTo.Name = "lblTo"
-        Me.lblTo.Size = New System.Drawing.Size(160, 20)
-        Me.lblTo.TabIndex = 54
-        Me.lblTo.Text = "January 13, 2014"
+        Me.lblQuantity.AutoSize = True
+        Me.lblQuantity.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblQuantity.Location = New System.Drawing.Point(256, 227)
+        Me.lblQuantity.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblQuantity.Name = "lblQuantity"
+        Me.lblQuantity.Size = New System.Drawing.Size(54, 17)
+        Me.lblQuantity.TabIndex = 72
+        Me.lblQuantity.Text = "C0001"
         '
-        'listStocks
+        'Label6
         '
-        Me.listStocks.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.listStocks.Location = New System.Drawing.Point(24, 201)
-        Me.listStocks.Name = "listStocks"
-        Me.listStocks.Size = New System.Drawing.Size(753, 182)
-        Me.listStocks.TabIndex = 53
-        Me.listStocks.UseCompatibleStateImageBehavior = False
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(32, 227)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(205, 17)
+        Me.Label6.TabIndex = 73
+        Me.Label6.Text = "Total Number of Stocks-In :"
         '
-        'Label1
+        'lblFrom
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(17, 27)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(250, 23)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "ORCHIDS BOOKSTORE"
+        Me.lblFrom.AutoSize = True
+        Me.lblFrom.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFrom.Location = New System.Drawing.Point(481, 98)
+        Me.lblFrom.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblFrom.Name = "lblFrom"
+        Me.lblFrom.Size = New System.Drawing.Size(160, 20)
+        Me.lblFrom.TabIndex = 71
+        Me.lblFrom.Text = "January 13, 2014"
         '
-        'Panel4
+        'Label3
         '
-        Me.Panel4.BackColor = System.Drawing.Color.Black
-        Me.Panel4.Location = New System.Drawing.Point(-12, 103)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(880, 2)
-        Me.Panel4.TabIndex = 52
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(18, -21)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(808, 23)
+        Me.Label3.TabIndex = 70
+        Me.Label3.Text = "_________________________________________________________"
         '
-        'Panel3
+        'Label2
         '
-        Me.Panel3.Controls.Add(Me.Label14)
-        Me.Panel3.Controls.Add(Me.Label13)
-        Me.Panel3.Controls.Add(Me.Label10)
-        Me.Panel3.Controls.Add(Me.Label12)
-        Me.Panel3.Controls.Add(Me.Label11)
-        Me.Panel3.Controls.Add(Me.Label9)
-        Me.Panel3.Location = New System.Drawing.Point(20, 390)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(753, 112)
-        Me.Panel3.TabIndex = 49
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(31, 98)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(109, 20)
+        Me.Label2.TabIndex = 68
+        Me.Label2.Text = "STOCKS-IN"
         '
         'Label14
         '
@@ -201,123 +195,121 @@ Partial Class frmStockReport
         Me.Label9.TabIndex = 10
         Me.Label9.Text = "Prepared By :"
         '
-        'lblQuantity
+        'Label5
         '
-        Me.lblQuantity.AutoSize = True
-        Me.lblQuantity.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblQuantity.Location = New System.Drawing.Point(241, 181)
-        Me.lblQuantity.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblQuantity.Name = "lblQuantity"
-        Me.lblQuantity.Size = New System.Drawing.Size(54, 17)
-        Me.lblQuantity.TabIndex = 9
-        Me.lblQuantity.Text = "C0001"
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(649, 98)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(17, 20)
+        Me.Label5.TabIndex = 78
+        Me.Label5.Text = "-"
         '
-        'Label6
+        'lblTo
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(17, 181)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(205, 17)
-        Me.Label6.TabIndex = 9
-        Me.Label6.Text = "Total Number of Stocks-In :"
+        Me.lblTo.AutoSize = True
+        Me.lblTo.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTo.Location = New System.Drawing.Point(674, 98)
+        Me.lblTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTo.Name = "lblTo"
+        Me.lblTo.Size = New System.Drawing.Size(160, 20)
+        Me.lblTo.TabIndex = 77
+        Me.lblTo.Text = "January 13, 2014"
         '
-        'lblFrom
+        'listStocks
         '
-        Me.lblFrom.AutoSize = True
-        Me.lblFrom.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFrom.Location = New System.Drawing.Point(466, 52)
-        Me.lblFrom.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblFrom.Name = "lblFrom"
-        Me.lblFrom.Size = New System.Drawing.Size(160, 20)
-        Me.lblFrom.TabIndex = 7
-        Me.lblFrom.Text = "January 13, 2014"
+        Me.listStocks.BackColor = System.Drawing.SystemColors.Menu
+        Me.listStocks.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.listStocks.Location = New System.Drawing.Point(39, 247)
+        Me.listStocks.Name = "listStocks"
+        Me.listStocks.Size = New System.Drawing.Size(753, 182)
+        Me.listStocks.TabIndex = 76
+        Me.listStocks.UseCompatibleStateImageBehavior = False
         '
-        'Label3
+        'Label1
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(-1, 87)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(808, 23)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "_________________________________________________________"
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(32, 73)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(250, 23)
+        Me.Label1.TabIndex = 69
+        Me.Label1.Text = "ORCHIDS BOOKSTORE"
         '
-        'Label2
+        'Panel4
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(16, 52)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(109, 20)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "STOCKS-IN"
+        Me.Panel4.BackColor = System.Drawing.Color.Black
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Location = New System.Drawing.Point(3, 149)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(880, 2)
+        Me.Panel4.TabIndex = 75
         '
-        'Button2
+        'Panel3
         '
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Location = New System.Drawing.Point(729, 14)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 25)
-        Me.Button2.TabIndex = 66
-        Me.Button2.Text = "&Close"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(624, 14)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 25)
-        Me.Button1.TabIndex = 67
-        Me.Button1.Text = "&Print"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Panel3.Controls.Add(Me.Label14)
+        Me.Panel3.Controls.Add(Me.Label13)
+        Me.Panel3.Controls.Add(Me.Label10)
+        Me.Panel3.Controls.Add(Me.Label12)
+        Me.Panel3.Controls.Add(Me.Label11)
+        Me.Panel3.Controls.Add(Me.Label9)
+        Me.Panel3.Location = New System.Drawing.Point(35, 436)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(753, 112)
+        Me.Panel3.TabIndex = 74
         '
         'frmStockReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(865, 849)
+        Me.Controls.Add(Me.lblQuantity)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.lblFrom)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lblTo)
+        Me.Controls.Add(Me.listStocks)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmStockReport"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Stock Report"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Panel4 As System.Windows.Forms.Panel
-    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
+    Friend WithEvents PrintDocument2 As System.Drawing.Printing.PrintDocument
+    Friend WithEvents lblQuantity As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lblFrom As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents lblQuantity As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents lblFrom As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents listStocks As System.Windows.Forms.ListView
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents lblTo As System.Windows.Forms.Label
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
+    Friend WithEvents listStocks As System.Windows.Forms.ListView
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents Panel3 As System.Windows.Forms.Panel
 End Class
