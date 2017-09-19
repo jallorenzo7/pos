@@ -41,12 +41,14 @@ Partial Class frmDailySalesReport
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.lblTo = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.lblTo)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.Label10)
@@ -96,7 +98,7 @@ Partial Class frmDailySalesReport
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(140, 434)
+        Me.Label10.Location = New System.Drawing.Point(141, 434)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(179, 17)
@@ -192,7 +194,7 @@ Partial Class frmDailySalesReport
         '
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.Location = New System.Drawing.Point(538, 52)
+        Me.lblDate.Location = New System.Drawing.Point(554, 52)
         Me.lblDate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(160, 20)
@@ -228,9 +230,9 @@ Partial Class frmDailySalesReport
         Me.Label1.Location = New System.Drawing.Point(15, 25)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(236, 23)
+        Me.Label1.Size = New System.Drawing.Size(250, 23)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "ORCHID BOOKSTORE"
+        Me.Label1.Text = "ORCHIDS BOOKSTORE"
         '
         'Button2
         '
@@ -255,6 +257,17 @@ Partial Class frmDailySalesReport
         Me.Button1.TabIndex = 70
         Me.Button1.Text = "&Print"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'lblTo
+        '
+        Me.lblTo.AutoSize = True
+        Me.lblTo.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTo.Location = New System.Drawing.Point(346, 52)
+        Me.lblTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTo.Name = "lblTo"
+        Me.lblTo.Size = New System.Drawing.Size(160, 20)
+        Me.lblTo.TabIndex = 62
+        Me.lblTo.Text = "January 13, 2014"
         '
         'frmDailySalesReport
         '
@@ -292,4 +305,5 @@ Partial Class frmDailySalesReport
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents lblTo As System.Windows.Forms.Label
 End Class

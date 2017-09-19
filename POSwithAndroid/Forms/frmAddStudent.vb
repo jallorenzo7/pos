@@ -11,8 +11,8 @@
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
 
-        If Me.txtboxUserName.Text.Trim = "" Or Me.cboxRole.Text = "" Then
-            MsgBox("Please fill up the the required information.")
+        If Me.txtboxUserName.Text.Trim = "" Or Me.cboxRole.Text = "" Or Me.txtboxPassword.Text = "" Then
+            MsgBox("Please fill up the required information.")
         Else
             If Me.txtboxPassword.Text.Trim = Me.txtRetype.Text.Trim Then
                 If Me.btnAdd.Text = "&Add" Then

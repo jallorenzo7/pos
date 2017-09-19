@@ -29,11 +29,11 @@ Module mainModule
     Public receipt_id, receipt_buyerType, receipt_quantity, receipt_total_amount, receipt_transaction_date As String
     Public rd_quantity, rd_amount, rd_id, rd_product As String
     Public db_id, db_username, db_password, db_role, db_name As String
-    Public dateNos As Date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+    Public dateNos As String = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
     Public inPass As String
     Public dateString As String = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
     Function dbconn()
-        strcon = "Dsn=PostgreSQL30;database=dbij3u4aipolgu;server=ec2-23-23-228-115.compute-1.amazonaws.com;port=5432;uid=vyiwdhkruxsdeu;sslmode=allow;readonly=0;protocol=7.4;fakeoidindex=0;showoidcolumn=0;rowversioning=0;showsystemtables=0;fetch=100;unknownsizes=0;maxvarcharsize=255;maxlongvarcharsize=8190;debug=0;commlog=0;usedeclarefetch=0;textaslongvarchar=1;unknownsaslongvarchar=0;boolsaschar=1;parse=0;lfconversion=1;updatablecursors=1;trueisminus1=0;bi=0;byteaaslongvarbinary=1;useserversideprepare=1;lowercaseidentifier=0;gssauthusegss=0;xaopt=1"
+        strcon = "Dsn=PostgreSQL35W;database=dbij3u4aipolgu;server=ec2-23-23-228-115.compute-1.amazonaws.com;port=5432;uid=vyiwdhkruxsdeu;sslmode=allow;readonly=0;protocol=7.4;fakeoidindex=0;showoidcolumn=0;rowversioning=0;showsystemtables=0;fetch=100;unknownsizes=0;maxvarcharsize=255;maxlongvarcharsize=8190;debug=0;commlog=0;usedeclarefetch=0;textaslongvarchar=1;unknownsaslongvarchar=0;boolsaschar=1;parse=0;lfconversion=1;updatablecursors=1;trueisminus1=0;bi=0;byteaaslongvarbinary=1;useserversideprepare=1;lowercaseidentifier=0;gssauthusegss=0;xaopt=1"
         con.ConnectionString = strcon
         con.Open()
         Return (0)
@@ -314,7 +314,7 @@ Module mainModule
         pos.lblAReceived.Text = amount
         Return 0
     End Function
-    Function discountInput(ByVal amount As String, ByVal type As string)
+    Function discountInput(ByVal amount As String, ByVal type As String)
         Dim id As String = pos.lblOr.Text
         checkExistingReceipt()
         Dim tm As String = Val(receipt_total_amount) - Val(receipt_total_amount * (Val(amount) / 100))
@@ -494,14 +494,8 @@ Module mainModule
         Else
             If logged_in_role = "admin" Then
                 pos.UserManagementToolStripMenuItem.Visible = True
-                frmStocks.UserManagementToolStripMenuItem.Visible = True
-                frmProducts.UserManagementToolStripMenuItem.Visible = True
-                frmuserMange.UserManagementToolStripMenuItem.Visible = True
             Else
                 pos.UserManagementToolStripMenuItem.Visible = False
-                frmStocks.UserManagementToolStripMenuItem.Visible = False
-                frmProducts.UserManagementToolStripMenuItem.Visible = False
-                frmuserMange.UserManagementToolStripMenuItem.Visible = False
             End If
         End If
         Return 0

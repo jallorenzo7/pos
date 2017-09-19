@@ -13,6 +13,7 @@
             If getUser(sql) Then
                 If Me.txtUsername.Text = db_username And password = db_password Then
                     logged_in_role = db_role
+                    MsgBox("Welcome '" + txtUsername.Text + "'", MsgBoxStyle.OkOnly)
                     Me.Close()
                     pos.Enabled = True
                     printReceipt.lblEmployeeId.Text = db_id
@@ -30,5 +31,13 @@
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
         pos.Close()
+    End Sub
+
+    Private Sub txtboxPassword_TextChanged(sender As Object, e As EventArgs) Handles txtboxPassword.TextChanged
+
+    End Sub
+
+    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
+
     End Sub
 End Class

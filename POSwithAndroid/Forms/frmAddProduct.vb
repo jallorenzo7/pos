@@ -10,8 +10,8 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        If Me.txtbxProdName.Text = "" Then
-            MsgBox("Product Name must not be empty.")
+        If Me.txtbxProdName.Text = "" Or Me.txtboxBarCode.Text = "" Or Me.txtboxPrice.Text = "" Or cboxCategory.Text = "" Then
+            MsgBox("Please fill in all fields.")
         Else
             If Me.btnAdd.Text = "&Add Product" Then
                 Dim categ As String = Me.cboxCategory.SelectedValue

@@ -7,7 +7,7 @@
         getLoginForm()
     End Sub
 
-    Private Sub CashRegisterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CashRegisterToolStripMenuItem.Click
+    Private Sub CashRegisterToolStripMenuItem_Click(sender As Object, e As EventArgs)
         pos.Show()
         Me.Close()
     End Sub
@@ -17,7 +17,7 @@
         Me.Close()
     End Sub
 
-    Private Sub ProductsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductsToolStripMenuItem.Click
+    Private Sub ProductsToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frmProducts.Show()
         Me.Close()
     End Sub
@@ -27,7 +27,7 @@
         Me.Close()
     End Sub
 
-    Private Sub ClosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClosToolStripMenuItem.Click
+    Private Sub ClosToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Me.Close()
         pos.Close()
     End Sub
@@ -137,12 +137,12 @@
         End If
     End Sub
 
-    Private Sub UserManagementToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles UserManagementToolStripMenuItem.Click
+    Private Sub UserManagementToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
         frmuserMange.Show()
         Me.Close()
     End Sub
 
-    Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
+    Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs)
         pos.Show()
         logged_in_role = ""
         getLoginForm()
@@ -154,4 +154,8 @@
         frmSalesFilter.Show()
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
+        pos.Show()
+    End Sub
 End Class

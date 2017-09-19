@@ -24,6 +24,9 @@
     End Sub
 
     Private Sub POS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SystemTimer.Start()
+
+        txtBxProductSearch.Focus()
         ControlBox = False
         dbconn()
         typePopulate()
@@ -32,6 +35,12 @@
         newReceipts()
         loadReceipts()
         getLoginForm()
+
+        Me.lbldate.Text = DateTime.Now.ToLongDateString
+        Me.lbltime.Text = TimeOfDay.ToString("hh:mm tt")
+
+
+
     End Sub
 
     Private Sub txtBxProductSearch_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBxProductSearch.KeyDown
@@ -110,9 +119,9 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnNextCustomer.Click
-        stockMinus(Me.lblOr.Text)
         sql = "update receipts set transaction_date ='" + dateNos + "' where id = " + Me.lblOr.Text
         query(sql)
+        stockMinus(Me.lblOr.Text)
         printReceipt.loadReceipts(Me.lblOr.Text)
         printReceipt.lblDate.Text = dateString
         printReceipt.lblAmountReceived.Text = Me.lblAReceived.Text
@@ -131,6 +140,7 @@
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Dim amount As String = InputBox("Input amount received")
         cashOut(amount)
+        btnNextCustomer.Enabled = True
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -140,6 +150,7 @@
         Dim disc As String = Val(Me.lblTotalAmount.Text) - (Val(Me.lblTotalAmount.Text) * (Val(amount) / 100))
         printReceipt.lblDiscount.Text = disc
         discountInput(amount, type)
+        Me.Button1.PerformClick()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -167,11 +178,27 @@
 
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub lblOr_Click(sender As Object, e As EventArgs) Handles lblOr.Click
 
     End Sub
 
-    Private Sub lblTotalAmount_Click(sender As Object, e As EventArgs) Handles lblTotalAmount.Click
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
+    End Sub
+
+    Private Sub lbluser_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub ToolStripStatusLabel1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub StatusStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs)
+
+    End Sub
+
+    Private Sub SystemTimer_Tick(sender As Object, e As EventArgs) Handles SystemTimer.Tick
+        Me.lbltime.Text = TimeOfDay.ToString("hh:mm:ss tt")
     End Sub
 End Class

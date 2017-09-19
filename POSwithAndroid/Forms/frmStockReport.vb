@@ -13,7 +13,7 @@
     End Sub
 
     Function loadStocks(ByVal from As String, ByVal fr As String)
-        sql = "SELECT transaction_id,product_id,quantity_initial,cost,arrival_date  FROM stocks where arrival_date > '" + from + " 00:00:00' and arrival_date < '" + fr + " 23:59:59'"
+        sql = "SELECT transaction_id,product_id,quantity_initial,cost,arrival_date  FROM stocks where arrival_date between'" + from + " 00:00:00' and '" + fr + " 23:59:59'"
         With Me.listStocks
             .Clear()
             .View = View.Details
@@ -61,4 +61,12 @@
         Me.lblQuantity.Text = temp
         Return (0)
     End Function
+
+    Private Sub lblQuantity_Click(sender As Object, e As EventArgs) Handles lblQuantity.Click
+
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
 End Class

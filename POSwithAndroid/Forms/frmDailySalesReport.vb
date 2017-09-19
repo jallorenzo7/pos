@@ -4,9 +4,8 @@
         ControlBox = False
     End Sub
 
-    Function loadReceipts(ByVal ids As String)
-        MsgBox(ids)
-        sql = "SELECT id, quantity, total_amount FROM receipts where transaction_date > '" + ids + " 00:00:00' and transaction_date < '" + ids + " 23:59:59'"
+    Function loadReceipts(ByVal ids As String, ByVal tor As String)
+        sql = "SELECT id, quantity, total_amount, transaction_date FROM receipts where transaction_date between '" + ids + " 00:00:00' and '" + tor + " 23:59:59'"
         With Me.ListView1
             .Clear()
             .View = View.Details
@@ -15,6 +14,7 @@
             .Columns.Add("Official Receipt", 125, HorizontalAlignment.Left)
             .Columns.Add("Quantity", 100, HorizontalAlignment.Left)
             .Columns.Add("Total Amount", 100, HorizontalAlignment.Left)
+            .Columns.Add("Transaction Date", 100, HorizontalAlignment.Left)
         End With
         viewmysql(sql, "LogUser")
         Dim j As Integer

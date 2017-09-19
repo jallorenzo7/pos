@@ -22,106 +22,83 @@ Partial Class frmuserMange
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.CashRegisterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StocksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProductsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.listUserManage = New System.Windows.Forms.ListView()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.MenuStrip1.SuspendLayout()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.UserManagementToolStripMenuItem, Me.LogOutToolStripMenuItem, Me.ClosToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1120, 28)
-        Me.MenuStrip1.TabIndex = 6
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'CashRegisterToolStripMenuItem
-        '
-        Me.CashRegisterToolStripMenuItem.Name = "CashRegisterToolStripMenuItem"
-        Me.CashRegisterToolStripMenuItem.Size = New System.Drawing.Size(110, 24)
-        Me.CashRegisterToolStripMenuItem.Text = "&Cash Register"
-        '
-        'StocksToolStripMenuItem
-        '
-        Me.StocksToolStripMenuItem.Name = "StocksToolStripMenuItem"
-        Me.StocksToolStripMenuItem.Size = New System.Drawing.Size(63, 24)
-        Me.StocksToolStripMenuItem.Text = "&Stocks"
-        '
-        'ProductsToolStripMenuItem
-        '
-        Me.ProductsToolStripMenuItem.Name = "ProductsToolStripMenuItem"
-        Me.ProductsToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
-        Me.ProductsToolStripMenuItem.Text = "P&roducts"
-        '
-        'UserManagementToolStripMenuItem
-        '
-        Me.UserManagementToolStripMenuItem.Enabled = False
-        Me.UserManagementToolStripMenuItem.Name = "UserManagementToolStripMenuItem"
-        Me.UserManagementToolStripMenuItem.Size = New System.Drawing.Size(142, 24)
-        Me.UserManagementToolStripMenuItem.Text = "U&ser Management"
-        '
-        'LogOutToolStripMenuItem
-        '
-        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
-        Me.LogOutToolStripMenuItem.Text = "Lo&g out"
-        '
-        'ClosToolStripMenuItem
-        '
-        Me.ClosToolStripMenuItem.Name = "ClosToolStripMenuItem"
-        Me.ClosToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
-        Me.ClosToolStripMenuItem.Text = "Clos&e"
         '
         'listUserManage
         '
-        Me.listUserManage.Location = New System.Drawing.Point(12, 52)
+        Me.listUserManage.Location = New System.Drawing.Point(12, 87)
         Me.listUserManage.Name = "listUserManage"
-        Me.listUserManage.Size = New System.Drawing.Size(789, 444)
+        Me.listUserManage.Size = New System.Drawing.Size(813, 466)
         Me.listUserManage.TabIndex = 7
         Me.listUserManage.UseCompatibleStateImageBehavior = False
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(807, 52)
+        Me.Button1.BackColor = System.Drawing.Color.IndianRed
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 9.0!)
+        Me.Button1.ForeColor = System.Drawing.Color.Snow
+        Me.Button1.Image = Global.POSwithAndroid.My.Resources.Resources.login_box
+        Me.Button1.Location = New System.Drawing.Point(836, 491)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(301, 51)
+        Me.Button1.Size = New System.Drawing.Size(260, 62)
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "&Add User"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.IndianRed
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1116, 71)
+        Me.Panel1.TabIndex = 12
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.IndianRed
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Snow
+        Me.Button2.Image = Global.POSwithAndroid.My.Resources.Resources.back35px
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(1, 0)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(127, 71)
+        Me.Button2.TabIndex = 0
+        Me.Button2.Text = "Back      "
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'frmuserMange
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1120, 595)
+        Me.ClientSize = New System.Drawing.Size(1116, 583)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.listUserManage)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmuserMange"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "POS"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents CashRegisterToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents StocksToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ProductsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UserManagementToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ClosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents listUserManage As System.Windows.Forms.ListView
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents LogOutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

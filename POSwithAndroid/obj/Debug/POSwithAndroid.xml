@@ -15,6 +15,46 @@ POSwithAndroid
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
+</member><member name="P:POSwithAndroid.My.Resources.Resources.articlesketchup3">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:POSwithAndroid.My.Resources.Resources.articlesketchup4">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:POSwithAndroid.My.Resources.Resources.back35px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:POSwithAndroid.My.Resources.Resources.left_round_512">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:POSwithAndroid.My.Resources.Resources.login_box">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:POSwithAndroid.My.Resources.Resources.mainclose">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:POSwithAndroid.My.Resources.Resources.mainlog">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:POSwithAndroid.My.Resources.Resources.mainstocks">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:POSwithAndroid.My.Resources.Resources.mainuser">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:POSwithAndroid.My.Resources.Resources.prodmain">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="T:POSwithAndroid.My.Resources.Resources">
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.

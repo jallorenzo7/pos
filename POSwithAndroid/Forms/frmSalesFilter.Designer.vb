@@ -48,21 +48,33 @@ Partial Class frmSalesFilter
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(287, 96)
+        Me.Button1.BackColor = System.Drawing.Color.IndianRed
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Snow
+        Me.Button1.Image = Global.POSwithAndroid.My.Resources.Resources.login_box
+        Me.Button1.Location = New System.Drawing.Point(259, 88)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(121, 31)
+        Me.Button1.Size = New System.Drawing.Size(121, 39)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "&Close"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(37, 96)
+        Me.Button2.BackColor = System.Drawing.Color.IndianRed
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Snow
+        Me.Button2.Image = Global.POSwithAndroid.My.Resources.Resources.login_box
+        Me.Button2.Location = New System.Drawing.Point(137, 88)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(121, 31)
+        Me.Button2.Size = New System.Drawing.Size(116, 39)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "Load &Report"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'DateTimePicker2
         '
@@ -91,7 +103,7 @@ Partial Class frmSalesFilter
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblTo)
         Me.Controls.Add(Me.DateTimePicker1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmSalesFilter"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sales Filter"

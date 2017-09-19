@@ -1,7 +1,7 @@
 ﻿Public Class frmProducts
     Dim exist As Boolean
 
-    Private Sub CashRegisterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CashRegisterToolStripMenuItem.Click
+    Private Sub CashRegisterToolStripMenuItem_Click(sender As Object, e As EventArgs)
         pos.Show()
         Me.Hide()
     End Sub
@@ -18,7 +18,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub StocksToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StocksToolStripMenuItem.Click
+    Private Sub StocksToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frmStocks.Show()
         Me.Hide()
     End Sub
@@ -28,7 +28,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub ClosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClosToolStripMenuItem.Click
+    Private Sub ClosToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Me.Hide()
         pos.Close()
     End Sub
@@ -170,15 +170,20 @@
         loadProducts(Me.TextBox1.Text)
     End Sub
 
-    Private Sub UserManagementToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles UserManagementToolStripMenuItem.Click
+    Private Sub UserManagementToolStripMenuItem_Click_1(sender As Object, e As EventArgs)
         frmuserMange.Show()
         Me.Close()
     End Sub
 
-    Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
+    Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs)
         pos.Show()
         logged_in_role = ""
         getLoginForm()
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+        pos.Show()
     End Sub
 End Class

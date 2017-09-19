@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label12.Text" xml:space="preserve">
+    <value>TRIPLE EIGHT
+BUSINESS EQUIPMENT CORP.
+552 Plaza San Lorenzo
+Ruiz Binondo Manila
+VAT REG.TIN 008501250000
+Accr080-000069987-000022
+Issue Date
+Valid Until
+per.No.1210-21A837348001
+THIS INVOICE/RECEIPT SHALL BE VALID
+FOR 5YRS FROM DATE OF PERMIT TO USE 
+THIS SERVE AS AN
+OFFICIAL RECEIPT</value>
+  </data>
   <metadata name="PrintDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
 </root>

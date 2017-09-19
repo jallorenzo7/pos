@@ -22,118 +22,103 @@ Partial Class frmStocks
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.CashRegisterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StocksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProductsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UserManagementToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.listStocks = New System.Windows.Forms.ListView()
         Me.btnReports = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
-        Me.listStocks = New System.Windows.Forms.ListView()
-        Me.MenuStrip1.SuspendLayout()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CashRegisterToolStripMenuItem, Me.StocksToolStripMenuItem, Me.ProductsToolStripMenuItem, Me.UserManagementToolStripMenuItem, Me.LogOutToolStripMenuItem, Me.ClosToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1120, 28)
-        Me.MenuStrip1.TabIndex = 5
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'CashRegisterToolStripMenuItem
-        '
-        Me.CashRegisterToolStripMenuItem.Name = "CashRegisterToolStripMenuItem"
-        Me.CashRegisterToolStripMenuItem.Size = New System.Drawing.Size(110, 24)
-        Me.CashRegisterToolStripMenuItem.Text = "&Cash Register"
-        '
-        'StocksToolStripMenuItem
-        '
-        Me.StocksToolStripMenuItem.Enabled = False
-        Me.StocksToolStripMenuItem.Name = "StocksToolStripMenuItem"
-        Me.StocksToolStripMenuItem.Size = New System.Drawing.Size(63, 24)
-        Me.StocksToolStripMenuItem.Text = "&Stocks"
-        '
-        'ProductsToolStripMenuItem
-        '
-        Me.ProductsToolStripMenuItem.Name = "ProductsToolStripMenuItem"
-        Me.ProductsToolStripMenuItem.Size = New System.Drawing.Size(78, 24)
-        Me.ProductsToolStripMenuItem.Text = "P&roducts"
-        '
-        'UserManagementToolStripMenuItem
-        '
-        Me.UserManagementToolStripMenuItem.Name = "UserManagementToolStripMenuItem"
-        Me.UserManagementToolStripMenuItem.Size = New System.Drawing.Size(142, 24)
-        Me.UserManagementToolStripMenuItem.Text = "U&ser Management"
-        '
-        'LogOutToolStripMenuItem
-        '
-        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(72, 24)
-        Me.LogOutToolStripMenuItem.Text = "Lo&g out"
-        '
-        'ClosToolStripMenuItem
-        '
-        Me.ClosToolStripMenuItem.Name = "ClosToolStripMenuItem"
-        Me.ClosToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
-        Me.ClosToolStripMenuItem.Text = "Clos&e"
-        '
-        'btnReports
-        '
-        Me.btnReports.Location = New System.Drawing.Point(915, 530)
-        Me.btnReports.Name = "btnReports"
-        Me.btnReports.Size = New System.Drawing.Size(193, 47)
-        Me.btnReports.TabIndex = 12
-        Me.btnReports.Text = "&Reports"
-        Me.btnReports.UseVisualStyleBackColor = True
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Location = New System.Drawing.Point(915, 38)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(193, 47)
-        Me.btnAdd.TabIndex = 11
-        Me.btnAdd.Text = "&Add Inventory"
-        Me.btnAdd.UseVisualStyleBackColor = True
         '
         'listStocks
         '
-        Me.listStocks.Location = New System.Drawing.Point(12, 38)
+        Me.listStocks.Location = New System.Drawing.Point(12, 94)
         Me.listStocks.Name = "listStocks"
-        Me.listStocks.Size = New System.Drawing.Size(897, 539)
+        Me.listStocks.Size = New System.Drawing.Size(836, 572)
         Me.listStocks.TabIndex = 10
         Me.listStocks.UseCompatibleStateImageBehavior = False
         '
+        'btnReports
+        '
+        Me.btnReports.BackColor = System.Drawing.Color.IndianRed
+        Me.btnReports.FlatAppearance.BorderSize = 0
+        Me.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReports.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReports.ForeColor = System.Drawing.Color.Snow
+        Me.btnReports.Image = Global.POSwithAndroid.My.Resources.Resources.login_box
+        Me.btnReports.Location = New System.Drawing.Point(854, 596)
+        Me.btnReports.Name = "btnReports"
+        Me.btnReports.Size = New System.Drawing.Size(254, 70)
+        Me.btnReports.TabIndex = 12
+        Me.btnReports.Text = "&Reports"
+        Me.btnReports.UseVisualStyleBackColor = False
+        '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.Color.IndianRed
+        Me.btnAdd.FlatAppearance.BorderSize = 0
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.Color.Snow
+        Me.btnAdd.Image = Global.POSwithAndroid.My.Resources.Resources.login_box
+        Me.btnAdd.Location = New System.Drawing.Point(854, 520)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(254, 70)
+        Me.btnAdd.TabIndex = 11
+        Me.btnAdd.Text = "&Add Inventory"
+        Me.btnAdd.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.IndianRed
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1120, 71)
+        Me.Panel1.TabIndex = 13
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.IndianRed
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Snow
+        Me.Button2.Image = Global.POSwithAndroid.My.Resources.Resources.back35px
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(1, 0)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(127, 71)
+        Me.Button2.TabIndex = 0
+        Me.Button2.Text = "Back      "
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'frmStocks
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1120, 595)
+        Me.ClientSize = New System.Drawing.Size(1120, 683)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnReports)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.listStocks)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.Snow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmStocks"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "POS"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents CashRegisterToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents StocksToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ProductsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ClosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btnReports As System.Windows.Forms.Button
     Friend WithEvents btnAdd As System.Windows.Forms.Button
     Friend WithEvents listStocks As System.Windows.Forms.ListView
-    Friend WithEvents UserManagementToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents LogOutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

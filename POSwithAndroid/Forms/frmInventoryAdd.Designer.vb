@@ -35,121 +35,182 @@ Partial Class frmInventoryAdd
         Me.txtdateTime = New System.Windows.Forms.DateTimePicker()
         Me.cboxProduct = New System.Windows.Forms.ComboBox()
         Me.lblStockId = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(322, 238)
+        Me.btnClose.BackColor = System.Drawing.Color.IndianRed
+        Me.btnClose.FlatAppearance.BorderSize = 0
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClose.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.ForeColor = System.Drawing.Color.Snow
+        Me.btnClose.Image = Global.POSwithAndroid.My.Resources.Resources.login_box
+        Me.btnClose.Location = New System.Drawing.Point(295, 318)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(116, 32)
+        Me.btnClose.Size = New System.Drawing.Size(134, 52)
         Me.btnClose.TabIndex = 7
         Me.btnClose.Text = "&Close"
-        Me.btnClose.UseVisualStyleBackColor = True
+        Me.btnClose.UseVisualStyleBackColor = False
         '
         'txtbxTransactionId
         '
-        Me.txtbxTransactionId.Location = New System.Drawing.Point(147, 29)
+        Me.txtbxTransactionId.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxTransactionId.Location = New System.Drawing.Point(158, 115)
         Me.txtbxTransactionId.Name = "txtbxTransactionId"
-        Me.txtbxTransactionId.Size = New System.Drawing.Size(271, 22)
+        Me.txtbxTransactionId.Size = New System.Drawing.Size(271, 24)
         Me.txtbxTransactionId.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(27, 32)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(38, 118)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(104, 17)
+        Me.Label1.Size = New System.Drawing.Size(100, 18)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Transaction ID:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(27, 111)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(38, 197)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 17)
+        Me.Label2.Size = New System.Drawing.Size(63, 18)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Quantity"
         '
         'txtBoxQuantity
         '
-        Me.txtBoxQuantity.Location = New System.Drawing.Point(147, 108)
+        Me.txtBoxQuantity.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBoxQuantity.Location = New System.Drawing.Point(158, 194)
         Me.txtBoxQuantity.Name = "txtBoxQuantity"
-        Me.txtBoxQuantity.Size = New System.Drawing.Size(271, 22)
+        Me.txtBoxQuantity.Size = New System.Drawing.Size(271, 24)
         Me.txtBoxQuantity.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(27, 71)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(38, 157)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 17)
+        Me.Label3.Size = New System.Drawing.Size(61, 18)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Product:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(27, 152)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(38, 238)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(102, 17)
+        Me.Label4.Size = New System.Drawing.Size(102, 18)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Date of Arrival:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(27, 196)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(38, 282)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(40, 17)
+        Me.Label5.Size = New System.Drawing.Size(40, 18)
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Cost:"
         '
         'txtboxCost
         '
-        Me.txtboxCost.Location = New System.Drawing.Point(147, 193)
+        Me.txtboxCost.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtboxCost.Location = New System.Drawing.Point(158, 279)
         Me.txtboxCost.Name = "txtboxCost"
-        Me.txtboxCost.Size = New System.Drawing.Size(271, 22)
+        Me.txtboxCost.Size = New System.Drawing.Size(271, 24)
         Me.txtboxCost.TabIndex = 5
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(30, 238)
+        Me.btnAdd.BackColor = System.Drawing.Color.IndianRed
+        Me.btnAdd.FlatAppearance.BorderSize = 0
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.Color.Snow
+        Me.btnAdd.Image = Global.POSwithAndroid.My.Resources.Resources.login_box
+        Me.btnAdd.Location = New System.Drawing.Point(158, 318)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(116, 32)
+        Me.btnAdd.Size = New System.Drawing.Size(134, 52)
         Me.btnAdd.TabIndex = 6
         Me.btnAdd.Text = "&Add Inventory"
-        Me.btnAdd.UseVisualStyleBackColor = True
+        Me.btnAdd.UseVisualStyleBackColor = False
         '
         'txtdateTime
         '
-        Me.txtdateTime.Location = New System.Drawing.Point(147, 147)
+        Me.txtdateTime.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdateTime.Location = New System.Drawing.Point(158, 233)
         Me.txtdateTime.Name = "txtdateTime"
-        Me.txtdateTime.Size = New System.Drawing.Size(271, 22)
+        Me.txtdateTime.Size = New System.Drawing.Size(271, 24)
         Me.txtdateTime.TabIndex = 4
         '
         'cboxProduct
         '
         Me.cboxProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboxProduct.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxProduct.FormattingEnabled = True
-        Me.cboxProduct.Location = New System.Drawing.Point(147, 68)
+        Me.cboxProduct.Location = New System.Drawing.Point(158, 154)
         Me.cboxProduct.Name = "cboxProduct"
-        Me.cboxProduct.Size = New System.Drawing.Size(271, 24)
+        Me.cboxProduct.Size = New System.Drawing.Size(271, 25)
         Me.cboxProduct.TabIndex = 12
         '
         'lblStockId
         '
         Me.lblStockId.AutoSize = True
-        Me.lblStockId.Location = New System.Drawing.Point(225, 252)
+        Me.lblStockId.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStockId.Location = New System.Drawing.Point(101, 352)
         Me.lblStockId.Name = "lblStockId"
-        Me.lblStockId.Size = New System.Drawing.Size(0, 17)
+        Me.lblStockId.Size = New System.Drawing.Size(0, 18)
         Me.lblStockId.TabIndex = 13
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(125, 36)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(173, 31)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Add Inventory"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.IndianRed
+        Me.Panel1.Controls.Add(Me.Panel5)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.ForeColor = System.Drawing.Color.Snow
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(469, 82)
+        Me.Panel1.TabIndex = 14
+        '
+        'Panel5
+        '
+        Me.Panel5.BackgroundImage = Global.POSwithAndroid.My.Resources.Resources.login_box
+        Me.Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel5.Controls.Add(Me.Label6)
+        Me.Panel5.Location = New System.Drawing.Point(-103, -13)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(674, 109)
+        Me.Panel5.TabIndex = 16
         '
         'frmInventoryAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(483, 302)
+        Me.ClientSize = New System.Drawing.Size(469, 392)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblStockId)
         Me.Controls.Add(Me.cboxProduct)
         Me.Controls.Add(Me.txtdateTime)
@@ -163,10 +224,13 @@ Partial Class frmInventoryAdd
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtbxTransactionId)
         Me.Controls.Add(Me.btnClose)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmInventoryAdd"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inventory Adding"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -184,4 +248,7 @@ Partial Class frmInventoryAdd
     Friend WithEvents txtdateTime As System.Windows.Forms.DateTimePicker
     Friend WithEvents cboxProduct As System.Windows.Forms.ComboBox
     Friend WithEvents lblStockId As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel5 As System.Windows.Forms.Panel
 End Class
