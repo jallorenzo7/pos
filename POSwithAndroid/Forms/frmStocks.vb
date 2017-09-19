@@ -71,7 +71,8 @@
             .FullRowSelect = True
             .GridLines = True
             .Columns.Add("ID", 25, HorizontalAlignment.Left)
-            .Columns.Add("Transaction ID", 100, HorizontalAlignment.Left)
+            .Columns.Add("Supplier ID", 100, HorizontalAlignment.Left)
+            .Columns.Add("Supplier Name", 100, HorizontalAlignment.Left)
             .Columns.Add("Product", 100, HorizontalAlignment.Left)
             .Columns.Add("On Hand Quantity", 100, HorizontalAlignment.Left)
             .Columns.Add("Initial Quantity", 100, HorizontalAlignment.Left)
@@ -130,6 +131,7 @@
                 frmInventoryAdd.txtBoxQuantity.Text = stock_quantity_initial
                 frmInventoryAdd.txtdateTime.Value = stock_arrival_date
                 frmInventoryAdd.lblStockId.Text = stock_id
+                frmInventoryAdd.txtSupplierName.Text = stock_supplier_name
                 frmInventoryAdd.lblStockId.Visible = False
                 frmInventoryAdd.Show()
                 Me.Enabled = False
@@ -158,4 +160,5 @@
         Me.Close()
         pos.Show()
     End Sub
+
 End Class

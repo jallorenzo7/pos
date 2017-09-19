@@ -15,7 +15,7 @@ Module mainModule
     Public buttonval, butval, butopt, category_exist, dbpass, loggedAdmin As String
     Public category_name, category_description, category_id As String
     Public product_barcode, product_category, product_description, product_id, product_name, product_price As String
-    Public stock_id, stock_tId, stock_product_id, stock_quantity_onhand, stock_quantity_initial, stock_cost As String
+    Public stock_id, stock_tId, stock_supplier_name, stock_product_id, stock_quantity_onhand, stock_quantity_initial, stock_cost As String
     Public stock_arrival_date As Date
     Public product_category_int As Integer
     Public productAdapter As New Odbc.OdbcDataAdapter
@@ -398,6 +398,7 @@ Module mainModule
         While (strreader.Read)
             stock_id = strreader("id").ToString
             stock_tId = strreader("transaction_id").ToString
+            stock_supplier_name = strreader("supplier_name").ToString
             stock_product_id = strreader("product_id").ToString
             stock_quantity_onhand = strreader("quantity_onhand").ToString
             stock_quantity_initial = strreader("quantity_initial").ToString
