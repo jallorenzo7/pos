@@ -22,8 +22,33 @@ Partial Class printReceipt
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(printReceipt))
-        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnPrint = New System.Windows.Forms.Button()
+        Me.lblThank = New System.Windows.Forms.Label()
+        Me.lblOR = New System.Windows.Forms.Label()
+        Me.lblLine = New System.Windows.Forms.Label()
+        Me.lblChange = New System.Windows.Forms.Label()
+        Me.lblDiscount = New System.Windows.Forms.Label()
+        Me.lblAmountReceived = New System.Windows.Forms.Label()
+        Me.change = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.subTotal = New System.Windows.Forms.Label()
+        Me.Cash = New System.Windows.Forms.Label()
+        Me.lblVat = New System.Windows.Forms.Label()
+        Me.vat = New System.Windows.Forms.Label()
+        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.TotalAmount = New System.Windows.Forms.Label()
+        Me.lblReceiptNo = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblDate = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
+        Me.listDetail = New System.Windows.Forms.ListView()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -31,118 +56,47 @@ Partial Class printReceipt
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblEmpName = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.lblEmployeeId = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.lblThank = New System.Windows.Forms.Label()
-        Me.lblOR = New System.Windows.Forms.Label()
-        Me.lblLine = New System.Windows.Forms.Label()
-        Me.lblChange = New System.Windows.Forms.Label()
-        Me.lblDiscount = New System.Windows.Forms.Label()
-        Me.lblAmountReceived = New System.Windows.Forms.Label()
-        Me.PrintDocument2 = New System.Drawing.Printing.PrintDocument()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.change = New System.Windows.Forms.Label()
-        Me.subTotal = New System.Windows.Forms.Label()
-        Me.Cash = New System.Windows.Forms.Label()
-        Me.lblVat = New System.Windows.Forms.Label()
-        Me.vat = New System.Windows.Forms.Label()
-        Me.lblTotal = New System.Windows.Forms.Label()
-        Me.TotalAmount = New System.Windows.Forms.Label()
-        Me.lblDate = New System.Windows.Forms.Label()
-        Me.lblReceiptNo = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.listDetail = New System.Windows.Forms.ListView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblEmployeeId = New System.Windows.Forms.Label()
+        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label12
+        'Panel1
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(60, 776)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(362, 260)
-        Me.Label12.TabIndex = 73
-        Me.Label12.Text = resources.GetString("Label12.Text")
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel1.Controls.Add(Me.btnPrint)
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.lblReceiptNo)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.lblDate)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.listDetail)
+        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.Label11)
+        Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.lblEmpName)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.lblEmployeeId)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(522, 1059)
+        Me.Panel1.TabIndex = 0
         '
-        'Label11
+        'btnPrint
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(38, 744)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(126, 20)
-        Me.Label11.TabIndex = 72
-        Me.Label11.Text = "Business Style:"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(65, 708)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(384, 17)
-        Me.Label10.TabIndex = 71
-        Me.Label10.Text = "==============================================="
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(61, 518)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(384, 17)
-        Me.Label9.TabIndex = 70
-        Me.Label9.Text = "==============================================="
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(61, 439)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(384, 17)
-        Me.Label8.TabIndex = 69
-        Me.Label8.Text = "==============================================="
-        '
-        'lblEmpName
-        '
-        Me.lblEmpName.AutoSize = True
-        Me.lblEmpName.Location = New System.Drawing.Point(383, 473)
-        Me.lblEmpName.Name = "lblEmpName"
-        Me.lblEmpName.Size = New System.Drawing.Size(91, 17)
-        Me.lblEmpName.TabIndex = 68
-        Me.lblEmpName.Text = "Employee ID:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(262, 473)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(115, 17)
-        Me.Label7.TabIndex = 67
-        Me.Label7.Text = "Employee Name:"
-        '
-        'lblEmployeeId
-        '
-        Me.lblEmployeeId.AutoSize = True
-        Me.lblEmployeeId.Location = New System.Drawing.Point(139, 473)
-        Me.lblEmployeeId.Name = "lblEmployeeId"
-        Me.lblEmployeeId.Size = New System.Drawing.Size(91, 17)
-        Me.lblEmployeeId.TabIndex = 66
-        Me.lblEmployeeId.Text = "Employee ID:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(39, 473)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(91, 17)
-        Me.Label6.TabIndex = 58
-        Me.Label6.Text = "Employee ID:"
+        Me.btnPrint.BackColor = System.Drawing.Color.White
+        Me.btnPrint.Location = New System.Drawing.Point(3, 4)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Size = New System.Drawing.Size(75, 23)
+        Me.btnPrint.TabIndex = 129
+        Me.btnPrint.UseVisualStyleBackColor = False
         '
         'lblThank
         '
@@ -208,6 +162,17 @@ Partial Class printReceipt
         Me.lblAmountReceived.Text = "0.00"
         Me.lblAmountReceived.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'change
+        '
+        Me.change.AutoSize = True
+        Me.change.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.change.Location = New System.Drawing.Point(31, 110)
+        Me.change.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.change.Name = "change"
+        Me.change.Size = New System.Drawing.Size(127, 23)
+        Me.change.TabIndex = 52
+        Me.change.Text = "Change    :"
+        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.lblThank)
@@ -223,22 +188,11 @@ Partial Class printReceipt
         Me.Panel2.Controls.Add(Me.vat)
         Me.Panel2.Controls.Add(Me.lblTotal)
         Me.Panel2.Controls.Add(Me.TotalAmount)
-        Me.Panel2.Location = New System.Drawing.Point(39, 539)
+        Me.Panel2.Location = New System.Drawing.Point(42, 544)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(435, 159)
-        Me.Panel2.TabIndex = 65
-        '
-        'change
-        '
-        Me.change.AutoSize = True
-        Me.change.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.change.Location = New System.Drawing.Point(31, 110)
-        Me.change.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.change.Name = "change"
-        Me.change.Size = New System.Drawing.Size(127, 23)
-        Me.change.TabIndex = 52
-        Me.change.Text = "Change    :"
+        Me.Panel2.TabIndex = 120
         '
         'subTotal
         '
@@ -306,137 +260,203 @@ Partial Class printReceipt
         Me.TotalAmount.TabIndex = 46
         Me.TotalAmount.Text = "Total Amount    :"
         '
-        'lblDate
-        '
-        Me.lblDate.AutoSize = True
-        Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.Location = New System.Drawing.Point(322, 490)
-        Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(0, 20)
-        Me.lblDate.TabIndex = 64
-        '
         'lblReceiptNo
         '
         Me.lblReceiptNo.AutoSize = True
         Me.lblReceiptNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblReceiptNo.Location = New System.Drawing.Point(178, 490)
+        Me.lblReceiptNo.Location = New System.Drawing.Point(181, 495)
         Me.lblReceiptNo.Name = "lblReceiptNo"
         Me.lblReceiptNo.Size = New System.Drawing.Size(0, 20)
-        Me.lblReceiptNo.TabIndex = 62
+        Me.lblReceiptNo.TabIndex = 117
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(125, 62)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(289, 80)
+        Me.Label2.TabIndex = 114
+        Me.Label2.Text = "ORCHIDS BLDG.V. TIOMICO" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ST. SANTO ROSARIO POB" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CITY OF SN.FERNANDO PAMP" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "TIN# 10" & _
+    "2-692-926-003VAT+00000000"
+        '
+        'lblDate
+        '
+        Me.lblDate.AutoSize = True
+        Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDate.Location = New System.Drawing.Point(325, 495)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(0, 20)
+        Me.lblDate.TabIndex = 119
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(38, 490)
+        Me.Label4.Location = New System.Drawing.Point(41, 495)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(134, 20)
-        Me.Label4.TabIndex = 61
+        Me.Label4.TabIndex = 116
         Me.Label4.Text = "Official Receipt: "
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(322, 117)
+        Me.Label3.Location = New System.Drawing.Point(340, 122)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(91, 20)
-        Me.Label3.TabIndex = 60
-        Me.Label3.Text = "+00000000"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(130, 57)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(251, 80)
-        Me.Label2.TabIndex = 59
-        Me.Label2.Text = "ORCHIDS BLDG.V. TIOMICO" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ST. SANTO ROSARIO POB" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CITY OF SN.FERNANDO PAMP" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "TIN# 10" & _
-    "2-692-926-003VAT"
-        '
-        'listDetail
-        '
-        Me.listDetail.BackColor = System.Drawing.SystemColors.Menu
-        Me.listDetail.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.listDetail.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.listDetail.Location = New System.Drawing.Point(15, 142)
-        Me.listDetail.Name = "listDetail"
-        Me.listDetail.Size = New System.Drawing.Size(464, 236)
-        Me.listDetail.TabIndex = 57
-        Me.listDetail.UseCompatibleStateImageBehavior = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(111, 21)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(278, 36)
-        Me.Label1.TabIndex = 56
-        Me.Label1.Text = "Orchids Bookstore"
+        Me.Label3.Size = New System.Drawing.Size(0, 20)
+        Me.Label3.TabIndex = 115
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(261, 490)
+        Me.Label5.Location = New System.Drawing.Point(264, 495)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(55, 20)
-        Me.Label5.TabIndex = 63
+        Me.Label5.TabIndex = 118
         Me.Label5.Text = "Date: "
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(114, 26)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(278, 36)
+        Me.Label1.TabIndex = 111
+        Me.Label1.Text = "Orchids Bookstore"
+        '
+        'PrintForm1
+        '
+        Me.PrintForm1.DocumentName = "document"
+        Me.PrintForm1.Form = Me
+        Me.PrintForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPrinter
+        Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
+        Me.PrintForm1.PrintFileName = Nothing
+        '
+        'listDetail
+        '
+        Me.listDetail.BackColor = System.Drawing.Color.White
+        Me.listDetail.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.listDetail.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.listDetail.Location = New System.Drawing.Point(18, 154)
+        Me.listDetail.Name = "listDetail"
+        Me.listDetail.Size = New System.Drawing.Size(464, 287)
+        Me.listDetail.TabIndex = 112
+        Me.listDetail.UseCompatibleStateImageBehavior = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(63, 766)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(362, 260)
+        Me.Label12.TabIndex = 128
+        Me.Label12.Text = resources.GetString("Label12.Text")
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(41, 746)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(126, 20)
+        Me.Label11.TabIndex = 127
+        Me.Label11.Text = "Business Style:"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(68, 713)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(384, 17)
+        Me.Label10.TabIndex = 126
+        Me.Label10.Text = "==============================================="
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(64, 523)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(384, 17)
+        Me.Label9.TabIndex = 125
+        Me.Label9.Text = "==============================================="
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(64, 444)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(384, 17)
+        Me.Label8.TabIndex = 124
+        Me.Label8.Text = "==============================================="
+        '
+        'lblEmpName
+        '
+        Me.lblEmpName.AutoSize = True
+        Me.lblEmpName.Location = New System.Drawing.Point(386, 478)
+        Me.lblEmpName.Name = "lblEmpName"
+        Me.lblEmpName.Size = New System.Drawing.Size(91, 17)
+        Me.lblEmpName.TabIndex = 123
+        Me.lblEmpName.Text = "Employee ID:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(265, 478)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(115, 17)
+        Me.Label7.TabIndex = 122
+        Me.Label7.Text = "Employee Name:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(42, 478)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(91, 17)
+        Me.Label6.TabIndex = 113
+        Me.Label6.Text = "Employee ID:"
+        '
+        'lblEmployeeId
+        '
+        Me.lblEmployeeId.AutoSize = True
+        Me.lblEmployeeId.Location = New System.Drawing.Point(142, 478)
+        Me.lblEmployeeId.Name = "lblEmployeeId"
+        Me.lblEmployeeId.Size = New System.Drawing.Size(91, 17)
+        Me.lblEmployeeId.TabIndex = 121
+        Me.lblEmployeeId.Text = "Employee ID:"
         '
         'printReceipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(494, 1045)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.lblEmpName)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.lblEmployeeId)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.lblDate)
-        Me.Controls.Add(Me.lblReceiptNo)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.listDetail)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label5)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Controls.Add(Me.Panel1)
         Me.Name = "printReceipt"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "printReceipt"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents lblEmpName As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents lblEmployeeId As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents btnPrint As System.Windows.Forms.Button
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents lblThank As System.Windows.Forms.Label
     Friend WithEvents lblOR As System.Windows.Forms.Label
     Friend WithEvents lblLine As System.Windows.Forms.Label
     Friend WithEvents lblChange As System.Windows.Forms.Label
     Friend WithEvents lblDiscount As System.Windows.Forms.Label
     Friend WithEvents lblAmountReceived As System.Windows.Forms.Label
-    Friend WithEvents PrintDocument2 As System.Drawing.Printing.PrintDocument
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents change As System.Windows.Forms.Label
     Friend WithEvents subTotal As System.Windows.Forms.Label
     Friend WithEvents Cash As System.Windows.Forms.Label
@@ -444,12 +464,22 @@ Partial Class printReceipt
     Friend WithEvents vat As System.Windows.Forms.Label
     Friend WithEvents lblTotal As System.Windows.Forms.Label
     Friend WithEvents TotalAmount As System.Windows.Forms.Label
-    Friend WithEvents lblDate As System.Windows.Forms.Label
     Friend WithEvents lblReceiptNo As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblDate As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents listDetail As System.Windows.Forms.ListView
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents listDetail As System.Windows.Forms.ListView
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents lblEmpName As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lblEmployeeId As System.Windows.Forms.Label
+    Friend WithEvents PrintForm1 As Microsoft.VisualBasic.PowerPacks.Printing.PrintForm
 End Class

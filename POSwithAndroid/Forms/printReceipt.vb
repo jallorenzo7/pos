@@ -1,15 +1,9 @@
 ﻿Public Class printReceipt
-
     Private Sub printReceipt_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MaximizeBox = False
         MinimizeBox = False
-        PrintDocument1.Print()
-        Me.Close()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
-
-    End Sub
 
     Function loadReceipts(ByVal ids As String)
         sql = "SELECT product_id, quantity, amount FROM product_receipt where receipt_id = '" + ids + "'"
@@ -46,4 +40,15 @@
         Return 0
     End Function
 
+    Private Sub listDetail_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        PrintForm1.Print()
+        Me.Close()
+    End Sub
 End Class

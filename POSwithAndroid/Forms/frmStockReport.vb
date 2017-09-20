@@ -4,22 +4,23 @@
         ControlBox = False
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PrintDocument1.Print()
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        PrintForm1.Print()
     End Sub
 
     Function loadStocks(ByVal from As String, ByVal fr As String)
-        sql = "SELECT transaction_id,product_id,quantity_initial,cost,arrival_date  FROM stocks where arrival_date between'" + from + " 00:00:00' and '" + fr + " 23:59:59'"
+        sql = "SELECT transaction_id, supplier_name, product_id, quantity_initial, cost,arrival_date  FROM stocks where arrival_date between'" + from + " 00:00:00' and '" + fr + " 23:59:59'"
         With Me.listStocks
             .Clear()
             .View = View.Details
             .FullRowSelect = True
             .GridLines = True
             .Columns.Add("Transaction ID", 100, HorizontalAlignment.Left)
+            .Columns.Add("Supplier Name", 100, HorizontalAlignment.Left)
             .Columns.Add("Product", 100, HorizontalAlignment.Left)
             .Columns.Add("Initial Quantity", 100, HorizontalAlignment.Left)
             .Columns.Add("Cost", 100, HorizontalAlignment.Left)
@@ -34,7 +35,7 @@
         Dim temp As String = "0"
         For m = 0 To mRow - 1
             For j = 0 To jCol - 1
-                If j = 1 Then
+                If j = 2 Then
                     Dim id As String = StrTable.Tables("LogUser").Rows(m).Item(j).ToString
                     If String.IsNullOrEmpty(id) Then
                     Else
@@ -67,6 +68,10 @@
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 End Class
