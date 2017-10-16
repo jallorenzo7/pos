@@ -3,7 +3,7 @@
     Dim sorting As String = "desc"
     Private Sub frmStocks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ControlBox = False
-        loadStocks("", "desc")
+        loadStocks("", "desc", "")
         getLoginForm()
     End Sub
 
@@ -36,6 +36,7 @@
         frmInventoryAdd.btnAdd.Text = "&Add Inventory"
         frmInventoryAdd.Text = "Add Inventory"
         frmInventoryAdd.txtbxTransactionId.Text = ""
+        frmInventoryAdd.txtSupplierName.Text = ""
         frmInventoryAdd.txtboxCost.Text = ""
         frmInventoryAdd.txtBoxQuantity.Text = ""
         frmInventoryAdd.lblStockId.Text = ""
@@ -44,21 +45,21 @@
         Me.Enabled = False
     End Sub
 
-    Function loadStocks(ByVal qu As String, ByVal sort As String)
+    Function loadStocks(ByVal qu As String, ByVal sort As String, ByVal search As String)
         If qu = "" Then
-            sql = "SELECT * FROM stocks"
+            sql = "SELECT id, transaction_id, supplier_name, product_id, quantity_onhand, quantity_initial, cost, arrival_date, employee_id FROM stocks where supplier_name ILIKE '%" + search + "%'"
         ElseIf qu = "3" Then
-            sql = "SELECT * FROM stocks Order By quantity_onhand " + sort
+            sql = "SELECT id, transaction_id, supplier_name, product_id, quantity_onhand, quantity_initial, cost, arrival_date, employee_id FROM stocks where supplier_name ILIKE '%" + search + "%'  Order By quantity_onhand " + sort
         ElseIf qu = "0" Then
-            sql = "SELECT * FROM stocks Order By id " + sort
+            sql = "SELECT id, transaction_id, supplier_name, product_id, quantity_onhand, quantity_initial, cost, arrival_date, employee_id FROM stocks  where supplier_name ILIKE '%" + search + "%' Order By id " + sort
         ElseIf qu = "1" Then
-            sql = "SELECT * FROM stocks Order By transaction_id " + sort
+            sql = "SELECT id, transaction_id, supplier_name, product_id, quantity_onhand, quantity_initial, cost, arrival_date, employee_id FROM stocks where supplier_name ILIKE '%" + search + "%' Order By transaction_id " + sort
         ElseIf qu = "4" Then
-            sql = "SELECT * FROM stocks Order By quantity_initial " + sort
+            sql = "SELECT id, transaction_id, supplier_name, product_id, quantity_onhand, quantity_initial, cost, arrival_date, employee_id FROM stocks where supplier_name ILIKE '%" + search + "%'  Order By quantity_initial " + sort
         ElseIf qu = "5" Then
-            sql = "SELECT * FROM stocks Order By cost " + sort
+            sql = "SELECT id, transaction_id, supplier_name, product_id, quantity_onhand, quantity_initial, cost, arrival_date, employee_id FROM stocks where supplier_name ILIKE '%" + search + "%' Order By cost " + sort
         ElseIf qu = "6" Then
-            sql = "SELECT * FROM stocks Order By arrival_date " + sort
+            sql = "SELECT id, transaction_id, supplier_name, product_id, quantity_onhand, quantity_initial, cost, arrival_date, employee_id FROM stocks where supplier_name ILIKE '%" + search + "%' Order By arrival_date " + sort
         End If
         If sorting = "asc" Then
             sorting = "desc"
@@ -78,6 +79,7 @@
             .Columns.Add("Initial Quantity", 100, HorizontalAlignment.Left)
             .Columns.Add("Cost", 100, HorizontalAlignment.Left)
             .Columns.Add("Arrival Date", 100, HorizontalAlignment.Left)
+            .Columns.Add("Employee", 100, HorizontalAlignment.Left)
         End With
         viewmysql(sql, "LogUser")
         Dim j As Integer
@@ -113,7 +115,7 @@
     Private Sub listStocks_ColumnClick(sender As Object, e As ColumnClickEventArgs) Handles listStocks.ColumnClick
         If e.Column = 2 Then
         Else
-            loadStocks(e.Column, sorting)
+            loadStocks(e.Column, sorting, Me.txtSearch.Text)
         End If
     End Sub
 
@@ -161,4 +163,11 @@
         pos.Show()
     End Sub
 
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        loadStocks("", "asc", Me.txtSearch.Text)
+    End Sub
+
+    Private Sub listStocks_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listStocks.SelectedIndexChanged
+
+    End Sub
 End Class

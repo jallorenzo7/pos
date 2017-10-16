@@ -27,14 +27,16 @@ Partial Class frmStocks
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'listStocks
         '
-        Me.listStocks.Location = New System.Drawing.Point(12, 94)
+        Me.listStocks.Location = New System.Drawing.Point(12, 115)
         Me.listStocks.Name = "listStocks"
-        Me.listStocks.Size = New System.Drawing.Size(836, 572)
+        Me.listStocks.Size = New System.Drawing.Size(836, 551)
         Me.listStocks.TabIndex = 10
         Me.listStocks.UseCompatibleStateImageBehavior = False
         '
@@ -97,11 +99,30 @@ Partial Class frmStocks
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(122, 87)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(726, 24)
+        Me.txtSearch.TabIndex = 14
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(12, 90)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(104, 18)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Supplier Name:"
+        '
         'frmStocks
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1120, 683)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnReports)
         Me.Controls.Add(Me.btnAdd)
@@ -114,6 +135,7 @@ Partial Class frmStocks
         Me.Text = "POS"
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnReports As System.Windows.Forms.Button
@@ -121,4 +143,6 @@ Partial Class frmStocks
     Friend WithEvents listStocks As System.Windows.Forms.ListView
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents txtSearch As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

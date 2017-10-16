@@ -137,7 +137,7 @@
         Me.lblTotalAmount.Text = "00.00"
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         Dim amount As String = InputBox("Input amount received")
         cashOut(amount)
         btnNextCustomer.Enabled = True
@@ -150,7 +150,6 @@
         Dim disc As String = Val(Me.lblTotalAmount.Text) - (Val(Me.lblTotalAmount.Text) * (Val(amount) / 100))
         printReceipt.lblDiscount.Text = disc
         discountInput(amount, type)
-        Me.Button1.PerformClick()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -200,5 +199,21 @@
 
     Private Sub SystemTimer_Tick(sender As Object, e As EventArgs) Handles SystemTimer.Tick
         Me.lbltime.Text = TimeOfDay.ToString("hh:mm:ss tt")
+    End Sub
+
+    Private Sub txtAmountReceived_KeyDown(sender As Object, e As KeyEventArgs) Handles txtAmountReceived.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            cashOut(Me.txtAmountReceived.Text)
+            btnNextCustomer.Enabled = True
+            Me.txtAmountReceived.Text = ""
+        End If
+    End Sub
+
+    Private Sub txtAmountReceived_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAmountReceived.KeyPress
+        e.Handled = Not (Char.IsDigit(e.KeyChar) Or e.KeyChar = "." Or Asc(e.KeyChar) = 8)
+    End Sub
+
+    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
+
     End Sub
 End Class

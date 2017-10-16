@@ -1,5 +1,5 @@
 ﻿Public Class frmLogIn
-
+    Dim checking As Integer = 1
     Private Sub frmLogIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ControlBox = False
     End Sub
@@ -21,9 +21,14 @@
                     getLoginForm()
                 Else
                     MsgBox("User does not exist in the database")
+                    checking = checking + 1
                 End If
             Else
                 MsgBox("User does not exist in the database")
+                checking = checking + 1
+            End If
+            If checking = 4 Then
+                Me.Enabled = False
             End If
         End If
     End Sub
@@ -33,11 +38,4 @@
         pos.Close()
     End Sub
 
-    Private Sub txtboxPassword_TextChanged(sender As Object, e As EventArgs) Handles txtboxPassword.TextChanged
-
-    End Sub
-
-    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
-
-    End Sub
 End Class

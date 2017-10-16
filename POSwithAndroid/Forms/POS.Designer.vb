@@ -51,8 +51,9 @@ Partial Class pos
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtAmountReceived = New System.Windows.Forms.TextBox()
         Me.btnNextCustomer = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnDailySales = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -338,8 +339,9 @@ Partial Class pos
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.txtAmountReceived)
         Me.GroupBox2.Controls.Add(Me.btnNextCustomer)
-        Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.btnDailySales)
         Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -349,6 +351,22 @@ Partial Class pos
         Me.GroupBox2.TabIndex = 28
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Cash Out"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(19, 31)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(123, 17)
+        Me.Label2.TabIndex = 26
+        Me.Label2.Text = "Amount Received:"
+        '
+        'txtAmountReceived
+        '
+        Me.txtAmountReceived.Location = New System.Drawing.Point(19, 53)
+        Me.txtAmountReceived.Name = "txtAmountReceived"
+        Me.txtAmountReceived.Size = New System.Drawing.Size(161, 22)
+        Me.txtAmountReceived.TabIndex = 25
         '
         'btnNextCustomer
         '
@@ -365,21 +383,6 @@ Partial Class pos
         Me.btnNextCustomer.TabIndex = 5
         Me.btnNextCustomer.Text = "&Next Customer>>"
         Me.btnNextCustomer.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.IndianRed
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft JhengHei UI Light", 9.0!)
-        Me.Button1.ForeColor = System.Drawing.Color.Snow
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(12, 32)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(168, 66)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "&Amount Received"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'btnDailySales
         '
@@ -497,6 +500,7 @@ Partial Class pos
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -522,7 +526,6 @@ Partial Class pos
     Friend WithEvents cboxType As System.Windows.Forms.ComboBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents btnNextCustomer As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents UserManagementToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -539,5 +542,7 @@ Partial Class pos
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents SystemTimer As System.Windows.Forms.Timer
     Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents txtAmountReceived As System.Windows.Forms.TextBox
 
 End Class

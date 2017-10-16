@@ -16,21 +16,21 @@
             MsgBox("Transaction Id must not be empty")
         Else
             If Me.btnAdd.Text = "Upda&te" Then
-                sql = "update stocks set transaction_id = '" + Me.txtbxTransactionId.Text + "',supplier_name ='" + Me.txtSupplierName.Text + "', quantity_onhand='" + Me.txtBoxQuantity.Text + "', quantity_initial='" + Me.txtBoxQuantity.Text + "', cost='" + Me.txtboxCost.Text + "', arrival_date='" + presDate + "', product_id = '" + prod + "' where id = " + Me.lblStockId.Text
+                sql = "update stocks set transaction_id = '" + Me.txtbxTransactionId.Text + "',supplier_name ='" + Me.txtSupplierName.Text + "', quantity_onhand='" + Me.txtBoxQuantity.Text + "', quantity_initial='" + Me.txtBoxQuantity.Text + "', cost='" + Me.txtboxCost.Text + "', arrival_date='" + presDate + "', product_id = '" + prod + "', employee_id = '" + db_name + "' where id = " + Me.lblStockId.Text
                 query(sql)
                 Me.txtbxTransactionId.Text = ""
                 Me.txtBoxQuantity.Text = ""
                 Me.txtboxCost.Text = ""
-                frmStocks.loadStocks("", "desc")
+                frmStocks.loadStocks("", "desc", "")
                 frmStocks.Enabled = True
                 Me.Hide()
             Else
-                sql = "insert into stocks (transaction_id, supplier_name, quantity_onhand, quantity_initial, cost, arrival_date, product_id) values ('" + Me.txtbxTransactionId.Text + "','" + Me.txtSupplierName.Text + "','" + Me.txtBoxQuantity.Text + "','" + Me.txtBoxQuantity.Text + "','" + Me.txtboxCost.Text + "','" + presDate + "','" + prod + "')"
+                sql = "insert into stocks (transaction_id, supplier_name, quantity_onhand, quantity_initial, cost, arrival_date, product_id, employee_id) values ('" + Me.txtbxTransactionId.Text + "','" + Me.txtSupplierName.Text + "','" + Me.txtBoxQuantity.Text + "','" + Me.txtBoxQuantity.Text + "','" + Me.txtboxCost.Text + "','" + presDate + "','" + prod + "', '" + db_name + "')"
                 query(sql)
                 Me.txtbxTransactionId.Text = ""
                 Me.txtBoxQuantity.Text = ""
                 Me.txtboxCost.Text = ""
-                frmStocks.loadStocks("", "desc")
+                frmStocks.loadStocks("", "desc", "")
                 frmStocks.Enabled = True
                 Me.Hide()
             End If
